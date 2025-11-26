@@ -1,0 +1,32 @@
+---
+interface Props {
+}
+
+const {} = Astro.props;
+---
+
+<div class="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
+    <div
+            class="relative overflow-hidden bg-gray-200 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
+        <!-- Gambar background diganti dengan suasana pelabuhan/industri -->
+        <img class="absolute inset-0 h-full w-full object-cover"
+             src="./port.jpg"
+             alt="Operasional Pelabuhan">
+        <div class="absolute inset-0 bg-gray-900/60 mix-blend-multiply"></div>
+        <div class="relative mx-auto max-w-2xl lg:mx-0">
+            <!-- Logo diganti dengan placeholder logo GMN -->
+            <img class="h-12 w-auto" src="./logo-128x128.png" alt="Logo GMN">
+            <figure>
+                <blockquote class="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">
+                    <p>“Jaringan logistik dan ketersediaan suku cadang dari tim Pilarindo sangat krusial bagi kami. Mereka mampu menyediakan solusi suku cadang berkualitas dengan efisien, yang sangat membantu menjaga keandalan dan efisiensi operasional kami di lapangan.”</p>
+                </blockquote>
+                <figcaption class="mt-6 text-base text-white">
+                    <!-- Konten Diubah: Nama dan Jabatan -->
+                    <div class="font-semibold">Ahmad Hidayat</div>
+                    <!-- Konten Diubah: Perusahaan menggunakan nama klien dari profil -->
+                    <div class="mt-1">Supply Chain Manager, PT. Mantimin Coal Mining</div>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</div>

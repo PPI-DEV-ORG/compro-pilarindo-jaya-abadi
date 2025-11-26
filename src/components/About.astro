@@ -1,0 +1,95 @@
+---
+// Komponen ini dapat diimpor ke file index.astro atau halaman lain.
+// const {} = Astro.props;
+---
+<div class="bg-white py-24 sm:py-32" id="tentang-kami">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        
+        <!-- Bagian 1: Tentang, Visi, & Misi -->
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
+            <!-- Kolom Teks (Kiri) -->
+            <div>
+                <p class="text-base font-semibold leading-7 text-blue-800">TENTANG KAMI</p>
+                <h2 class="mt-2 text-3xl font-roboto font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    Solusi Dinamis untuk Industri Anda
+                </h2>
+                <div class="mt-8 text-lg leading-7 text-gray-600 space-y-6">
+                    <p>
+                        <strong>PT. Pilarindo Jaya Abadi</strong> adalah perusahaan induk yang dinamis dan terdiversifikasi dengan kehadiran kuat di bidang <strong>logistik, distribusi suku cadang, dan sistem manajemen ban</strong>.
+                    </p>
+                    <p>
+                        Dibangun di atas landasan pengalaman puluhan tahun, kami berdedikasi untuk menyediakan suku cadang berkualitas tinggi yang menjamin keandalan dan efisiensi bagi klien kami.
+                    </p>
+                </div>
+
+                <!-- Visi -->
+                <h3 class="mt-12 text-2xl font-roboto font-bold tracking-tight text-gray-900">
+                    Visi Kami
+                </h3>
+                <p class="mt-4 text-lg leading-7 text-gray-600">
+                    Menjadi pemasok suku cadang berkualitas tinggi yang paling tepercaya dan disukai, untuk memastikan keandalan dan efisiensi bagi industri di seluruh dunia.
+                </p>
+
+                <!-- Misi -->
+                <h3 class="mt-8 text-2xl font-roboto font-bold tracking-tight text-gray-900">
+                    Misi Kami
+                </h3>
+                <ul role="list" class="mt-6 space-y-4 text-gray-600 text-base leading-7">
+                    <li class="flex gap-x-3 items-center">
+                        <svg class="h-6 w-6 flex-none text-blue-800" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
+                        <span>Menyediakan hanya suku cadang terbaik yang memenuhi harapan.</span>
+                    </li>
+                    <li class="flex gap-x-3 items-center">
+                        <svg class="h-6 w-6 flex-none text-blue-800" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
+                        <span>Memberikan layanan pelanggan dan purna jual yang luar biasa.</span>
+                    </li>
+                    <li class="flex gap-x-3 items-center">
+                        <svg class="h-6 w-6 flex-none text-blue-800" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
+                        <span>Membangun hubungan jangka panjang dengan klien dan mitra.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Kolom Gambar (Kanan) -->
+            <div class="relative overflow-hidden rounded-3xl shadow-xl lg:sticky lg:top-24">
+                <img class="aspect-[4/3] w-full object-cover" src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=1470&auto=format=fit=crop" alt="Tim profesional bekerja di kantor modern">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent"></div>
+            </div>
+        </div>
+
+        <!-- Bagian 2: Tim Manajemen -->
+        <div class="mx-auto max-w-2xl text-center mt-24 sm:mt-32">
+            <h2 class="text-3xl font-roboto font-bold tracking-tight text-gray-900 sm:text-4xl">Tim Manajemen Kami</h2>
+            <p class="mt-6 text-lg leading-8 text-gray-600">
+                Dipimpin oleh para profesional berpengalaman dengan puluhan tahun keahlian di bidang logistik, manufaktur, dan teknik.
+            </p>
+        </div>
+        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            
+            <!-- Profil Sumanto -->
+            <div class="flex flex-col sm:flex-row gap-x-8 items-start">
+                <img class="h-48 w-48 flex-none rounded-2xl object-cover" src="profile-1.png" alt="Foto Sumanto">
+                <div class="mt-6 sm:mt-0">
+                    <h3 class="text-2xl font-roboto font-bold leading-9 tracking-tight text-gray-900">Sumanto</h3>
+                    <p class="text-base font-semibold leading-7 text-blue-800">Key Leader - Logistik & Manufaktur</p>
+                    <p class="mt-4 text-base leading-7 text-gray-600">
+                        Dengan latar belakang kuat di bidang logistik dan manufaktur, beliau memastikan operasi rantai pasok yang mulus dan kontrol kualitas yang ketat, serta mengoptimalkan alur kerja operasional untuk efisiensi.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Profil Erwin Yevi -->
+            <div class="flex flex-col sm:flex-row gap-x-8 items-start">
+                <img class="h-48 w-48 flex-none rounded-2xl object-cover" src="profile-2.png" alt="Foto Erwin Yevi">
+                <div class="mt-6 sm:mt-0">
+                    <h3 class="text-2xl font-roboto font-bold leading-9 tracking-tight text-gray-900">Erwin Yevi</h3>
+                    <p class="text-base font-semibold leading-7 text-blue-800">Key Leader - Kontrak Mekanikal-Elektrikal</p>
+                    <p class="mt-4 text-base leading-7 text-gray-600">
+                        Spesialis di bidang kontrak mekanikal-elektrikal dengan pengalaman luas mengelola proyek industri. Beliau memastikan suku cadang kami memenuhi standar operasional tertinggi.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
