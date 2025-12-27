@@ -13,7 +13,6 @@
     "@astrojs/node": "^8.3.4",
     "@astrojs/react": "^4.4.2",
     "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^9.0.2",
     "@notionhq/client": "^5.6.0",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
@@ -25,6 +24,7 @@
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
+    "@astrojs/vercel": "^8.2.11",
     "@types/node": "^25.0.3"
   }
 }
