@@ -21,7 +21,13 @@ export const GET: APIRoute = async ({ request }) => {
       nextCursor,
     }),
     {
-      headers: { "Content-Type": "application/json" },
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
     }
   );
 };

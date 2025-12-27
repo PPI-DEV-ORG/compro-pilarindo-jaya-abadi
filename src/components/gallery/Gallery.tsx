@@ -26,7 +26,9 @@ export default function GalleryComponent() {
     if (loading || !hasMore) return;
     setLoading(true);
 
-    const url = new URL(`${import.meta.env.PUBLIC_API_SERVER}/api/gallery`);
+    const url = new URL(
+      `${"https://api-ptpilarindojayaabadi-i99fw3nnw-pantau-ai.vercel.app/"}/api/gallery`
+    );
     url.searchParams.set("pageSize", "9");
 
     if (cursor) url.searchParams.set("cursor", cursor);
