@@ -1,0 +1,39 @@
+/* empty css                                    */
+import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_CFb2y3vC.mjs';
+import 'kleur/colors';
+import { $ as $$Layout } from '../../chunks/Layout_DBeya8yF.mjs';
+export { renderers } from '../../renderers.mjs';
+
+const $$3 = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Hidrolik & Turbocharger - PT Pilarindo Jaya Abadi" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="bg-white mt-20"> <main class="mx-auto px-4 pb-24 pt-14 sm:px-6 sm:pb-32 sm:pt-16 lg:max-w-7xl lg:px-8"> <!-- Product --> <div class="lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16"> <!-- Product image --> <div class="lg:col-span-4 lg:row-end-1"> <div class="aspect-h-3 aspect-w-4 overflow-hidden rounded-lg bg-gray-100"> <!-- Gambar Hydraulic Pump / Turbo --> <img src="product-3.jpg" alt="Hydraulic Pump and Turbocharger Parts" class="object-cover object-center bg-repeat"> </div> </div> <!-- Product details --> <div class="mx-auto mt-14 max-w-2xl sm:mt-16 lg:col-span-3 lg:row-span-2 lg:row-end-2 lg:mt-0 lg:max-w-none"> <div class="flex flex-col-reverse"> <div class="mt-4"> <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+Sistem Hidrolik & Turbocharger
+</h1> <h2 id="information-heading" class="sr-only">Informasi Produk</h2> <p class="mt-2 text-sm text-gray-500">
+Kategori: Power & Induction System (Kawasaki / Rexroth / Garrett / Holset)
+</p> </div> </div> <p class="mt-6 text-gray-500">
+Maksimalkan tenaga dan responsivitas alat berat serta efisiensi bahan bakar mesin kapal Anda. Kami menyediakan <i>Hydraulic Main Pump</i>, <i>Swing/Travel Motor</i>, serta unit <i>Turbocharger</i> lengkap yang dirancang untuk menahan tekanan kerja ekstrem dan temperatur tinggi. Tersedia opsi baru (New Assembly) dan Remanufactured.
+</p> <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-1"> <button type="button" class="flex w-full items-center justify-center rounded-md border border-black bg-black px-8 py-3 text-base font-medium text-white hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2">
+Minta Penawaran Harga
+</button> </div> <div class="mt-10 border-t border-gray-200 pt-10"> <h3 class="text-sm font-medium text-gray-900">Keunggulan Utama</h3> <div class="prose prose-sm mt-4 text-gray-500"> <ul role="list" class="space-y-6"> <li class="relative flex gap-x-4"> <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6"> <div class="w-px bg-gray-200"></div> </div> <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white"> <div class="h-1.5 w-1.5 rounded-full bg-red-600 ring-1 ring-gray-300"></div> </div> <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">High Volumetric Efficiency</span> Pompa hidrolik dengan kebocoran internal minimal untuk tenaga angkat maksimal.</p> </li> <li class="relative flex gap-x-4"> <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6"> <div class="w-px bg-gray-200"></div> </div> <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white"> <div class="h-1.5 w-1.5 rounded-full bg-red-600 ring-1 ring-gray-300"></div> </div> <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Dynamic Balancing</span> Rotor turbocharger diseimbangkan secara presisi untuk mencegah getaran di RPM tinggi.</p> </li> <li class="relative flex gap-x-4"> <div class="absolute left-0 top-0 flex w-6 justify-center -bottom-6"> <div class="w-px bg-gray-200"></div> </div> <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white"> <div class="h-1.5 w-1.5 rounded-full bg-red-600 ring-1 ring-gray-300"></div> </div> <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Heat Resistant Seals</span> Menggunakan seal Viton/HNBR yang tahan suhu oli panas hingga 120°C.</p> </li> <li class="relative flex gap-x-4"> <div class="relative flex h-6 w-6 flex-none items-center justify-center bg-white"> <div class="h-1.5 w-1.5 rounded-full bg-red-600 ring-1 ring-gray-300"></div> </div> <p class="flex-auto py-0.5 text-xs leading-5 text-gray-500"><span class="font-medium text-gray-900">Complete Range</span> Tersedia untuk Excavator (PC/CAT), Wheel Loader, dan Marine Genset.</p> </li> </ul> </div> </div> <div class="mt-10 border-t border-gray-200 pt-10"> <h3 class="text-sm font-medium text-gray-900">Spesifikasi Teknis</h3> <p class="mt-4 text-sm text-gray-500"> <strong>Hidrolik:</strong> Pressure rating up to 350 Bar (5000 PSI). Flow rate disesuaikan dengan displacement pompa (K3V, K5V, Rexroth A10V series).<br> <strong>Turbocharger:</strong> Support mesin diesel 4L hingga 60L. Cartridge assemblies telah lolos uji VSR (Vibration Sorting Rig).
+</p> </div> </div> <div class="mx-auto mt-16 w-full max-w-2xl lg:col-span-4 lg:mt-0 lg:max-w-none"> <div> <div class="border-b border-gray-200"> <div class="-mb-px flex space-x-8" aria-orientation="horizontal" role="tablist"> <button id="tab-faq" class="border-transparent text-gray-700 hover:border-gray-300 hover:text-gray-800 whitespace-nowrap border-b-2 py-6 text-sm font-medium" aria-controls="tab-panel-faq" role="tab" type="button">FAQ Produk
+</button> </div> </div> <div id="tab-panel-faq" class="text-sm text-gray-500" aria-labelledby="tab-faq" role="tabpanel" tabindex="0"> <h3 class="sr-only">Frequently Asked Questions</h3> <dl> <dt class="mt-10 font-medium text-gray-900">Apakah hanya menjual unit utuh (Assy) atau bisa per komponen?</dt> <dd class="prose prose-sm mt-2 max-w-none text-gray-500"> <p>
+Kami menyediakan fleksibilitas. Anda bisa membeli unit utuh (Pump Assy / Turbo Assy) atau bagian internalnya saja (Rotary Kit, Cartridge, Repair Kit) untuk perbaikan yang lebih hemat biaya.
+</p> </dd> <dt class="mt-10 font-medium text-gray-900">Apakah menyediakan jasa servis/rekondisi?</dt> <dd class="prose prose-sm mt-2 max-w-none text-gray-500"> <p>
+Ya, workshop kami di Balikpapan dilengkapi dengan <i>Hydraulic Test Bench</i> untuk melakukan servis, lapping, dan pengetesan performa pompa hidrolik Anda dengan garansi servis 3 bulan.
+</p> </dd> <dt class="mt-10 font-medium text-gray-900">Bagaimana cara memastikan part number yang tepat?</dt> <dd class="prose prose-sm mt-2 max-w-none text-gray-500"> <p>
+Untuk hidrolik, mohon fotokan <i>nameplate</i> pada pompa. Untuk turbocharger, kami membutuhkan foto nomor seri pada <i>compressor housing</i>. Tim teknis kami akan melakukan <i>cross-reference</i> untuk Anda.
+</p> </dd> </dl> </div> </div> </div> </div> </main> </div> ` })}`;
+}, "/home/osenbal/projects/samtek/compro-pilarindo-jaya-abadi/src/pages/product/3.astro", void 0);
+
+const $$file = "/home/osenbal/projects/samtek/compro-pilarindo-jaya-abadi/src/pages/product/3.astro";
+const $$url = "/product/3";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+    __proto__: null,
+    default: $$3,
+    file: $$file,
+    url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

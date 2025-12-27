@@ -1,0 +1,55 @@
+/* empty css                                 */
+import { c as createComponent, b as createAstro, m as maybeRenderHead, a as renderTemplate, r as renderComponent } from '../chunks/astro/server_CFb2y3vC.mjs';
+import 'kleur/colors';
+import { $ as $$Layout } from '../chunks/Layout_DBeya8yF.mjs';
+import 'clsx';
+export { renderers } from '../renderers.mjs';
+
+const $$Astro = createAstro();
+const $$Contact$1 = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$Contact$1;
+  Astro2.props;
+  return renderTemplate`${maybeRenderHead()}<div class="relative isolate"> <div class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 transform-gpu justify-center overflow-hidden blur-3xl sm:bottom-0 sm:right-[calc(50%-6rem)] sm:top-auto sm:translate-y-0 sm:transform-gpu sm:justify-end" aria-hidden="true"> <div class="aspect-[1108/632] w-[69.26rem] flex-none bg-gradient-to-r from-[#0e7490] to-[#1e3a8a] opacity-25" style="clip-path: polygon(73.6% 48.6%, 91.7% 88.5%, 100% 53.9%, 97.4% 18.1%, 92.5% 15.4%, 75.7% 36.3%, 55.3% 52.8%, 46.5% 50.9%, 45% 37.4%, 50.3% 13.1%, 21.3% 36.2%, 0.1% 0.1%, 5.4% 49.1%, 21.4% 36.4%, 58.9% 100%, 73.6% 48.6%)"></div> </div> <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2"> <div class="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48"> <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg"> <h2 class="text-3xl tracking-tight text-black font-nunito-sans">Hubungi Kami</h2> <p class="mt-6 text-lg leading-8 text-gray-600 font-nunito">
+Butuh penawaran suku cadang (RFQ), konsultasi teknis, atau info logistik? Tim kami siap membantu kebutuhan bisnis Anda.
+</p> <div class="mx-auto mt-6 max-w-lg space-y-4"> <div class="flex gap-x-6"> <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-black"> <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"></path> </svg> </div> <div> <h3 class="text-base font-semibold leading-7 text-black font-nunito-sans">
+Layanan Penjualan
+</h3> <p class="mt-2 leading-7 text-gray-600 font-nunito">
+Hubungi tim sales kami untuk ketersediaan stok, harga, dan penawaran.
+</p> <p class="mt-4"> <a href="mailto:sales@pilarindojayaabadi.com" class="text-sm leading-6 text-gray-800 font-nunito">
+sales@pilarindojayaabadi.com<span aria-hidden="true">&rarr;</span> </a> </p> </div> </div> <div class="flex gap-x-6"> <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-black"> <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"></path> </svg> </div> <div> <h3 class="text-base font-semibold leading-7 text-black font-nunito-sans">
+Workshop
+</h3> <p class="mt-2 leading-7 text-gray-600 font-nunito">
+Wisma Griya Kemayoran (Unit SH-2), Jl. Industri No. 9-11, Sawah Besar, Jakarta Pusat.
+</p> <p class="mt-4"> <a href="tel:02138269334" class="text-sm leading-6 text-gray-800 font-nunito">
+021 3826 9334 <span aria-hidden="true">&rarr;</span> </a> </p> </div> </div> <div class="flex gap-x-6"> <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-black"> <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"></path> </svg> </div> <div> <h3 class="text-base font-semibold leading-7 text-black font-nunito-sans">
+Kantor Utama
+</h3> <p class="mt-2 leading-7 text-gray-600 font-nunito">
+Jl. Gading Kirana Timur A.11/15, Kelapa Gading Barat, Jakarta Utara.
+</p> <p class="mt-4"> <a href="tel:02138269334" class="text-sm leading-6 text-gray-800 font-nunito">
+021 3826 9334 <span aria-hidden="true">&rarr;</span> </a> </p> </div> </div> </div> </div> </div> <form action="mailto:sales@perusahaananda.com" method="GET" class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"> <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg"> <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2"> <div> <label for="id_first_name" class="block text-sm font-nunito leading-6 text-black">
+Nama Depan<span class="text-xs text-red-500">*</span> </label> <div class="mt-2.5"> <input type="text" name="subject" required id="id_first_name" placeholder="Nama Depan" class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm"> </div> </div> <div> <label for="id_last_name" class="block text-sm font-nunito leading-6 text-black">
+Nama Belakang<span class="text-xs text-red-500">*</span> </label> <div class="mt-2.5"> <input type="text" name="cc" required id="id_last_name" placeholder="Nama Belakang" class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm"> </div> </div> <div class="sm:col-span-2"> <label for="id_email" class="block text-sm font-nunito leading-6 text-black">
+Email Perusahaan<span class="text-xs text-red-500">*</span> </label> <div class="mt-2.5"> <input type="email" name="bcc" required id="id_email" placeholder="email@perusahaan.com" class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm"> </div> </div> <div class="sm:col-span-2"> <label for="id_message" class="block text-sm font-nunito leading-6 text-black">
+Detail Permintaan<span class="text-xs text-red-500">*</span> </label> <div class="mt-2.5"> <textarea name="body" rows="6" required id="id_message" placeholder="Tuliskan detail permintaan..." class="block w-full rounded-md border-0 bg-gray-100 px-3.5 py-2 text-gray-800 shadow-sm"></textarea> </div> </div> </div> <div class="mt-8 flex justify-end"> <button type="submit" class="rounded-md border border-black bg-black px-3.5 py-2.5 text-sm text-white hover:bg-white hover:text-black">
+Kirim Email
+</button> </div> </div> </form> </div> <div class="absolute left-1/2 right-0 top-full -z-10 hidden -translate-y-1/2 transform-gpu overflow-hidden blur-3xl sm:block" aria-hidden="true"> <div class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#0e7490] to-[#1e3a8a] opacity-30" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div> </div> </div> `;
+}, "/home/osenbal/projects/samtek/compro-pilarindo-jaya-abadi/src/components/Contact.astro", void 0);
+
+const $$Contact = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "PT Pilarindo Jaya Abadi" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "ContactComponent", $$Contact$1, {})} ` })}`;
+}, "/home/osenbal/projects/samtek/compro-pilarindo-jaya-abadi/src/pages/contact.astro", void 0);
+
+const $$file = "/home/osenbal/projects/samtek/compro-pilarindo-jaya-abadi/src/pages/contact.astro";
+const $$url = "/contact";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+    __proto__: null,
+    default: $$Contact,
+    file: $$file,
+    url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
