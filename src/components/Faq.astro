@@ -1,52 +1,68 @@
 ---
 interface Props {
-    title: string;
-    body: string;
-    href: string;
+  // title: string;
+  // body: string;
+  // href: string;
 }
 
-const {href, title, body} = Astro.props;
+const {} = Astro.props;
 ---
 
 <div class="bg-white">
-    <div class="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-32 lg:px-8">
-        <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">Pertanyaan Umum (FAQ)</h2>
+  <div class="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-32 lg:px-8">
+    <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">
+      Pertanyaan Umum (FAQ)
+    </h2>
 
-        <dl class="mt-10 space-y-8 divide-y divide-gray-900/10">
+    <dl class="mt-10 space-y-8 divide-y divide-gray-900/10">
+      <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
+        <dt
+          class="text-base font-semibold leading-7 text-gray-900 lg:col-span-5"
+        >
+          Apakah suku cadang yang dijual dijamin keasliannya (Genuine)?
+        </dt>
+        <dd class="mt-4 lg:col-span-7 lg:mt-0">
+          <p class="text-base leading-7 text-gray-600">
+            Ya, kami menjamin keaslian produk untuk kategori <i>Genuine Parts</i
+            > yang dilengkapi sertifikat (COO). Kami juga menyediakan opsi <i
+              >OEM</i
+            > dan <i>Premium Aftermarket</i> sebagai alternatif yang lebih ekonomis
+            namun tetap berkualitas standar industri.
+          </p>
+        </dd>
+      </div>
 
-            <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
-                <dt class="text-base font-semibold leading-7 text-gray-900 lg:col-span-5">
-                    Apakah suku cadang yang dijual dijamin keasliannya (Genuine)?
-                </dt>
-                <dd class="mt-4 lg:col-span-7 lg:mt-0">
-                    <p class="text-base leading-7 text-gray-600">
-                        Ya, kami menjamin keaslian produk untuk kategori <i>Genuine Parts</i> yang dilengkapi sertifikat (COO). Kami juga menyediakan opsi <i>OEM</i> dan <i>Premium Aftermarket</i> sebagai alternatif yang lebih ekonomis namun tetap berkualitas standar industri.
-                    </p>
-                </dd>
-            </div>
+      <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
+        <dt
+          class="text-base font-semibold leading-7 text-gray-900 lg:col-span-5"
+        >
+          Berapa lama estimasi pengiriman ke lokasi tambang di luar Jawa?
+        </dt>
+        <dd class="mt-4 lg:col-span-7 lg:mt-0">
+          <p class="text-base leading-7 text-gray-600">
+            Untuk stok yang tersedia di gudang Balikpapan atau Jakarta,
+            pengiriman dilakukan di hari yang sama (<i>Same Day Dispatch</i>).
+            Estimasi tiba di lokasi <i>site</i> rata-rata 2-4 hari kerja, tergantung
+            pada aksesibilitas logistik daerah tersebut.
+          </p>
+        </dd>
+      </div>
 
-            <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
-                <dt class="text-base font-semibold leading-7 text-gray-900 lg:col-span-5">
-                    Berapa lama estimasi pengiriman ke lokasi tambang di luar Jawa?
-                </dt>
-                <dd class="mt-4 lg:col-span-7 lg:mt-0">
-                    <p class="text-base leading-7 text-gray-600">
-                        Untuk stok yang tersedia di gudang Balikpapan atau Jakarta, pengiriman dilakukan di hari yang sama (<i>Same Day Dispatch</i>). Estimasi tiba di lokasi <i>site</i> rata-rata 2-4 hari kerja, tergantung pada aksesibilitas logistik daerah tersebut.
-                    </p>
-                </dd>
-            </div>
-
-            <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
-                <dt class="text-base font-semibold leading-7 text-gray-900 lg:col-span-5">
-                    Apakah GMN bisa membantu mencari sparepart mesin kapal tua (Obsolete)?
-                </dt>
-                <dd class="mt-4 lg:col-span-7 lg:mt-0">
-                    <p class="text-base leading-7 text-gray-600">
-                        Tentu. Tim <i>procurement</i> kami memiliki jaringan global di Singapura, Jepang, dan Eropa. Kami dapat melakukan <i>special sourcing</i> untuk komponen mesin yang sudah tidak diproduksi massal atau sulit ditemukan di pasar lokal.
-                    </p>
-                </dd>
-            </div>
-
-        </dl>
-    </div>
+      <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
+        <dt
+          class="text-base font-semibold leading-7 text-gray-900 lg:col-span-5"
+        >
+          Apakah GMN bisa membantu mencari sparepart mesin kapal tua (Obsolete)?
+        </dt>
+        <dd class="mt-4 lg:col-span-7 lg:mt-0">
+          <p class="text-base leading-7 text-gray-600">
+            Tentu. Tim <i>procurement</i> kami memiliki jaringan global di Singapura,
+            Jepang, dan Eropa. Kami dapat melakukan <i>special sourcing</i> untuk
+            komponen mesin yang sudah tidak diproduksi massal atau sulit ditemukan
+            di pasar lokal.
+          </p>
+        </dd>
+      </div>
+    </dl>
+  </div>
 </div>

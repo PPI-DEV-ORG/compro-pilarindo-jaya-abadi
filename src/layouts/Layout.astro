@@ -1,148 +1,240 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import Footer from '../components/Footer.astro';
+import { ViewTransitions } from "astro:transitions";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 
 interface Props {
   title: string;
 }
 
-const {title} = Astro.props;
+const { title } = Astro.props;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html class="h-full bg-gray-50" lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="description" content="Supplier of heavy equipment spare parts, industrial logistics, and tyre management. Serving clients in mining, logistics, and manufacturing.">
-  <meta name="viewport" content="width=device-width"/>
-  <link rel="icon" type="image/svg+xml" href="/logo-64x64.png"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Supplier of heavy equipment spare parts, industrial logistics, and tyre management. Serving clients in mining, logistics, and manufacturing."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logo-64x64.png" />
 
-  <meta name="generator" content="Dashboard"/>
-  <title>{title}</title>
+    <meta name="generator" content="Dashboard" />
+    <title>{title}</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Basic Open Graph -->
-  <meta property="og:title" content="PT Pilarindo Jaya Abadi" />
-  <meta property="og:description" content="Supplier of heavy equipment spare parts, industrial logistics, and tyre management. Serving clients in mining, logistics, and manufacturing." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pilarindojayaabadi.com" />
+    <!-- Basic Open Graph -->
+    <meta property="og:title" content="PT Pilarindo Jaya Abadi" />
+    <meta
+      property="og:description"
+      content="Supplier of heavy equipment spare parts, industrial logistics, and tyre management. Serving clients in mining, logistics, and manufacturing."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pilarindojayaabadi.com" />
 
-  <!-- Gambar preview: gunakan URL absolut (harus HTTPS) -->
-  <meta property="og:image" content="https://pilarindojayaabadi.com/logo-black.png" />
-  <meta property="og:image:secure_url" content="https://pilarindojayaabadi.com/logo-black.png" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+    <!-- Gambar preview: gunakan URL absolut (harus HTTPS) -->
+    <meta
+      property="og:image"
+      content="https://pilarindojayaabadi.com/logo-black.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://pilarindojayaabadi.com/logo-black.png"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-  <!-- Optional: fallback untuk Twitter cards -->
-  <meta name="twitter:card" content="https://pilarindojayaabadi.com/logo-black.png" />
-  <meta name="twitter:title" content="PT Pilarindo Jaya Abadi" />
-  <meta name="twitter:description" content="Supplier of heavy equipment spare parts, industrial logistics, and tyre management. Serving clients in mining, logistics, and manufacturing." />
-  <meta name="twitter:image" content="https://pilarindojayaabadi.com/logo-black.png" />
+    <!-- Optional: fallback untuk Twitter cards -->
+    <meta
+      name="twitter:card"
+      content="https://pilarindojayaabadi.com/logo-black.png"
+    />
+    <meta name="twitter:title" content="PT Pilarindo Jaya Abadi" />
+    <meta
+      name="twitter:description"
+      content="Supplier of heavy equipment spare parts, industrial logistics, and tyre management. Serving clients in mining, logistics, and manufacturing."
+    />
+    <meta
+      name="twitter:image"
+      content="https://pilarindojayaabadi.com/logo-black.png"
+    />
 
-  <ViewTransitions />
-</head>
-<body class="h-full font-nunito">
+    <ViewTransitions />
+  </head>
+  <body class="h-full font-nunito">
+    <div class="bg-white">
+      <!-- Header -->
+      <header class="absolute inset-x-0 top-0 z-50">
+        <nav
+          class="flex items-center justify-between p-6 lg:px-8"
+          aria-label="Global"
+        >
+          <div class="flex lg:flex-1">
+            <a href="/" class="-m-1.5 p-1.5 flex items-center gap-2">
+              <span class="sr-only">PT Pilarindo Jaya Abadi</span>
 
-<div class="bg-white">
-  <!-- Header -->
-  <header class="absolute inset-x-0 top-0 z-50">
-    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-<div class="flex lg:flex-1">
-  <a href="/" class="-m-1.5 p-1.5 flex items-center gap-2">
-    <span class="sr-only">PT Pilarindo Jaya Abadi</span>
-
-    <img class="h-8 w-auto" src="/logo-black.png" alt="">
-<img class="h-9 w-auto"
-     src="https://placehold.co/800x100/transparent/black?text=PT Pilarindo Jaya Abadi&align=left"
-     alt="PT. Pilarindo Jaya Abadi">
-  </a>
-</div>
-      <div id="openNavBar" class="flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-          <span class="sr-only">Open main menu</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-               aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
-          </svg>
-        </button>
-      </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-        <a href="/" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
-        <a href="/products" class="text-sm font-semibold leading-6 text-gray-900">Products</a>
-        <a href="/about" class="text-sm font-semibold leading-6 text-gray-900">About</a>
-        <a href="/contact" class="text-sm font-semibold leading-6 text-gray-900">Contact</a>
-      </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="/katalog.pdf" class="text-sm font-semibold leading-6 text-gray-900">Katalog PDF <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </nav>
-    <!-- Mobile menu, show/hide based on menu open state. -->
-    <div id="navBar" class="hidden lg:hidden" role="dialog" aria-modal="true">
-      <!-- Background backdrop, show/hide based on slide-over state. -->
-      <div class="fixed inset-0 z-50"></div>
-      <div
-        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-        <div class="flex items-center justify-between">
-          <a href="/" class="-m-1.5 p-1.5">
-            <span class="sr-only">PT Pilarindo Jaya Abadi</span>
-            <img class="h-8 w-auto" src="/logo-black.png" alt="">
-          </a>
-          <button id="closeNavBar" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-            <span class="sr-only">Close menu</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                 aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </button>
-        </div>
-        <div class="mt-6 flow-root">
-          <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <a href="/"
-                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
-              <a href="/products"
-                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Products</a>
-              <a href="/about"
-                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About</a>
-              <a href="/contact"
-                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
-            </div>
-            <div class="py-6">
-              <a href="/"
-                 class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                Katalog PDF
+              <img class="h-8 w-auto" src="/logo-black.png" alt="" />
+              <img
+                class="h-9 w-auto"
+                src="https://placehold.co/800x100/transparent/black?text=PT Pilarindo Jaya Abadi&align=left"
+                alt="PT. Pilarindo Jaya Abadi"
+              />
+            </a>
+          </div>
+          <div id="openNavBar" class="flex lg:hidden">
+            <button
+              type="button"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-12">
+            <a href="/" class="text-sm font-semibold leading-6 text-gray-900"
+              >Home</a
+            >
+            <a
+              href="/products"
+              class="text-sm font-semibold leading-6 text-gray-900">Products</a
+            >
+            <a
+              href="/about"
+              class="text-sm font-semibold leading-6 text-gray-900">About</a
+            >
+            <a
+              href="/gallery"
+              class="text-sm font-semibold leading-6 text-gray-900">Gallery</a
+            >
+            <a
+              href="/contact"
+              class="text-sm font-semibold leading-6 text-gray-900">Contact</a
+            >
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a
+              href="/katalog.pdf"
+              class="text-sm font-semibold leading-6 text-gray-900"
+              >Katalog PDF <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </nav>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div
+          id="navBar"
+          class="hidden lg:hidden"
+          role="dialog"
+          aria-modal="true"
+        >
+          <!-- Background backdrop, show/hide based on slide-over state. -->
+          <div class="fixed inset-0 z-50"></div>
+          <div
+            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          >
+            <div class="flex items-center justify-between">
+              <a href="/" class="-m-1.5 p-1.5">
+                <span class="sr-only">PT Pilarindo Jaya Abadi</span>
+                <img class="h-8 w-auto" src="/logo-black.png" alt="" />
               </a>
+              <button
+                id="closeNavBar"
+                type="button"
+                class="-m-2.5 rounded-md p-2.5 text-gray-700"
+              >
+                <span class="sr-only">Close menu</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <a
+                    href="/"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Home</a
+                  >
+                  <a
+                    href="/products"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Products</a
+                  >
+                  <a
+                    href="/about"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >About</a
+                  >
+                  <a
+                    href="/contact"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Contact</a
+                  >
+                </div>
+                <div class="py-6">
+                  <a
+                    href="/"
+                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    Katalog PDF
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </header>
+
+      <main class="isolate">
+        <slot />
+      </main>
+
+      <!-- Footer -->
+      <div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
+        <Footer />
       </div>
     </div>
-  </header>
-
-  <main class="isolate">
-    <slot />
-  </main>
-
-  <!-- Footer -->
-  <div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
-    <Footer/>
-  </div>
-</div>
-
-</body>
+  </body>
 </html>
 
-
 <script>
-  const navBar: HTMLElement = document.getElementById('navBar');
-  const closeNavBar = document.getElementById('closeNavBar');
-  const openNavBar = document.getElementById('openNavBar');
+  const navBar: HTMLElement = document.getElementById("navBar");
+  const closeNavBar = document.getElementById("closeNavBar");
+  const openNavBar = document.getElementById("openNavBar");
 
-  closeNavBar.addEventListener('click', toggleMenu);
-  openNavBar.addEventListener('click', toggleMenu);
+  closeNavBar.addEventListener("click", toggleMenu);
+  openNavBar.addEventListener("click", toggleMenu);
 
   function toggleMenu() {
     navBar.classList.toggle("hidden");

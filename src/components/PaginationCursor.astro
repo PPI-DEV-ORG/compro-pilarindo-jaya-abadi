@@ -1,0 +1,24 @@
+---
+const { cursor, nextCursor, hasMore } = Astro.props;
+---
+
+<div class="flex justify-center gap-3 mt-10">
+  {
+    cursor && (
+      <a href="/gallery" class="px-4 py-2 border rounded hover:bg-gray-100">
+        Prev
+      </a>
+    )
+  }
+
+  {
+    hasMore && nextCursor && (
+      <a
+        href={`/gallery?cursor=${nextCursor}`}
+        class="px-4 py-2 border rounded hover:bg-gray-100"
+      >
+        Next
+      </a>
+    )
+  }
+</div>
