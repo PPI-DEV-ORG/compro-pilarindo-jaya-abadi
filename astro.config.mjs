@@ -9,7 +9,7 @@ import vercel from "@astrojs/vercel";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  output: "hybrid",
+  output: "server",
   adapter: vercel({
     edgeMiddleware: true,
   }),
