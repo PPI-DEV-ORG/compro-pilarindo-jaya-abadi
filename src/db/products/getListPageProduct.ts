@@ -8,13 +8,15 @@ import {
 } from "@notionhq/client";
 import { notion } from "../notion.service";
 
-type ListGalleryOptions = {
+type ListProductOptions = {
+  category?: string[];
+  brand?: string[];
   pageSize?: number;
   cursor?: string | null;
   sortDirection?: "ascending" | "descending";
 };
 
-const databaseId = import.meta.env.NOTION_GALLERY_DATABASE_ID;
+const databaseId = import.meta.env.NOTION_PRODUCT_DATABASE_ID;
 
 /* ---------------------------
    Type Guards
@@ -61,9 +63,9 @@ function normalizeNotionError(error: unknown): never {
    Main Logic
 ---------------------------- */
 
-export async function getListPageGallery(options: ListGalleryOptions = {}) {
+export async function getListPageProduct(options: ListProductOptions = {}) {
   if (!databaseId) {
-    throw new NotionError("NOTION_GALLERY_DATABASE_ID is missing");
+    throw new NotionError("NOTION_PRODUCT_DATABASE_ID is missing");
   }
 
   try {
@@ -80,6 +82,30 @@ export async function getListPageGallery(options: ListGalleryOptions = {}) {
       throw new NotionError("Data source not found");
     }
 
+    const filters: any[] = [];
+
+    if (options.category?.length) {
+      filters.push({
+        or: options.category.map((cat) => ({
+          property: "category",
+          multi_select: {
+            contains: cat,
+          },
+        })),
+      });
+    }
+
+    if (options.brand?.length) {
+      filters.push({
+        or: options.brand.map((brand) => ({
+          property: "brand",
+          select: {
+            equals: brand,
+          },
+        })),
+      });
+    }
+
     const response = await notion.dataSources.query({
       data_source_id: dataSourceId,
       page_size: options.pageSize ?? 12,
@@ -94,6 +120,11 @@ export async function getListPageGallery(options: ListGalleryOptions = {}) {
           direction: options.sortDirection ?? "descending",
         },
       ],
+      filter: filters.length
+        ? {
+            and: filters,
+          }
+        : undefined,
     });
 
     return {

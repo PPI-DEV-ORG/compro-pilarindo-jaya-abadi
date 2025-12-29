@@ -2,34 +2,44 @@ import { useEffect, useState } from "react";
 import type { GalleryItem } from "../../types/global";
 
 export default function GalleryComponent() {
-  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
-  const [lightboxTitle, setLightboxTitle] = useState<string>("");
+  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
+
   const [items, setItems] = useState<GalleryItem[]>([]);
   const [cursor, setCursor] = useState<string | null>(null);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [pageSize] = useState(12);
 
-  const openLightbox = (imageUrl?: string, title?: string) => {
-    if (!imageUrl) return;
-    setLightboxImage(imageUrl);
-    setLightboxTitle(title ?? "");
+  const openLightbox = (item: GalleryItem) => {
+    setSelectedItem(item);
     document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
-    setLightboxImage(null);
-    setLightboxTitle("");
+    setSelectedItem(null);
     document.body.style.overflow = "";
+  };
+
+  const nextSelectedItem = () => {
+    if (!selectedItem) return;
+    const currentIndex = items.findIndex((item) => item.id === selectedItem.id);
+    const nextIndex = (currentIndex + 1) % items.length;
+    setSelectedItem(items[nextIndex]);
+  };
+
+  const prevSelectedItem = () => {
+    if (!selectedItem) return;
+    const currentIndex = items.findIndex((item) => item.id === selectedItem.id);
+    const prevIndex = (currentIndex - 1 + items.length) % items.length;
+    setSelectedItem(items[prevIndex]);
   };
 
   async function load(): Promise<void> {
     if (loading || !hasMore) return;
     setLoading(true);
 
-    const url = new URL(
-      `${"https://api-ptpilarindojayaabadi-i99fw3nnw-pantau-ai.vercel.app/"}/api/gallery`
-    );
-    url.searchParams.set("pageSize", "9");
+    const url = new URL(`${import.meta.env.PUBLIC_API_SERVER}/api/gallery`);
+    url.searchParams.set("pageSize", pageSize.toString());
 
     if (cursor) url.searchParams.set("cursor", cursor);
 
@@ -77,7 +87,7 @@ export default function GalleryComponent() {
                   key={item.id}
                   className="gallery-card cursor-pointer animate-scale-in border rounded-md"
                   style={{ animationDelay: `${index * 0.1}s` }}
-                  onClick={() => openLightbox(item.imageUrl, item.title)}
+                  onClick={() => openLightbox(item)}
                 >
                   <div className="aspect-square overflow-hidden">
                     <img
@@ -123,27 +133,71 @@ export default function GalleryComponent() {
             )}
 
             {/* Lightbox */}
-            {lightboxImage && (
+            {selectedItem && (
               <div
-                className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6"
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-opacity duration-300"
                 onClick={closeLightbox}
               >
                 <div
-                  className="relative max-w-4xl w-full"
+                  className="relative max-w-5xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
                   onClick={(e) => e.stopPropagation()}
                 >
+                  {/* Close Button */}
                   <button
                     onClick={closeLightbox}
-                    className="absolute -top-4 -right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-xl"
+                    className="absolute top-4 right-4 text-gray-700 hover:text-gray-900 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
                   >
                     ✕
                   </button>
 
-                  <img
-                    src={lightboxImage}
-                    alt={lightboxTitle}
-                    className="w-full max-h-[80vh] object-contain rounded-xl bg-white"
-                  />
+                  {/* Image Section */}
+                  <div className="flex-1 flex items-center justify-center bg-gray-100 p-4">
+                    <img
+                      src={selectedItem.imageUrl}
+                      alt={selectedItem.title}
+                      className="max-h-[80vh] w-auto object-contain rounded-xl shadow-md transition-transform hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Content Section */}
+                  <div className="flex-1 p-6 flex flex-col justify-between gap-4">
+                    <div>
+                      <h2 className="text-2xl font-semibold text-gray-800">
+                        {selectedItem.title}
+                      </h2>
+                      <p className="mt-2 text-gray-600">
+                        {selectedItem.description}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {selectedItem.tags.map((tag) => (
+                        <span
+                          key={tag.id}
+                          className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium"
+                          style={{ backgroundColor: tag.color }}
+                        >
+                          {tag.name}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Optional navigation */}
+                    <div className="mt-6 flex justify-between">
+                      <button
+                        onClick={prevSelectedItem}
+                        className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition"
+                      >
+                        Previous
+                      </button>
+                      <button
+                        onClick={nextSelectedItem}
+                        className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
