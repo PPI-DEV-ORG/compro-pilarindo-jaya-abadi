@@ -11,7 +11,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html class="h-full bg-gray-50" lang="en">
+<html class="h-full" lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -20,22 +20,21 @@ const { title } = Astro.props;
     />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/logo-64x64.png" />
-
     <meta name="generator" content="Dashboard" />
     <title>{title}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Roboto:wght@100&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Basic Open Graph -->
+    <!-- Open Graph -->
     <meta property="og:title" content="PT Pilarindo Jaya Abadi" />
     <meta
       property="og:description"
-      content="Supplier of heavy equipment spare parts, industrial logistics, and tyre management. Serving clients in mining, logistics, and manufacturing."
+      content="Supplier of heavy equipment spare parts, industrial logistics, and tyre management."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pilarindojayaabadi.com" />
@@ -43,22 +42,8 @@ const { title } = Astro.props;
       property="og:image"
       content="https://pilarindojayaabadi.com/logo-black.png"
     />
-    <meta
-      property="og:image:secure_url"
-      content="https://pilarindojayaabadi.com/logo-black.png"
-    />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      name="twitter:card"
-      content="https://pilarindojayaabadi.com/logo-black.png"
-    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="PT Pilarindo Jaya Abadi" />
-    <meta
-      name="twitter:description"
-      content="Supplier of heavy equipment spare parts, industrial logistics, and tyre management. Serving clients in mining, logistics, and manufacturing."
-    />
     <meta
       name="twitter:image"
       content="https://pilarindojayaabadi.com/logo-black.png"
@@ -66,210 +51,254 @@ const { title } = Astro.props;
 
     <ViewTransitions />
   </head>
-  <body class="h-full font-nunito">
-    <div class="bg-white">
-      <!-- ───── Header ───── -->
-      <header class="absolute inset-x-0 top-0 z-50">
-        <nav
-          class="flex items-center justify-between p-6 lg:px-8"
-          aria-label="Global"
+
+  <body
+    class="h-full"
+    style="font-family: 'Plus Jakarta Sans', sans-serif; background: #f8f9fb;"
+  >
+    <!-- ─────────────────── NAVBAR ─────────────────── -->
+    <header id="site-header" class="nav-header">
+      <nav class="nav-inner" aria-label="Global">
+        <!-- Logo -->
+        <div class="nav-logo-wrap">
+          <a href="/" class="nav-logo">
+            <img
+              id="logo-img"
+              class="logo-img"
+              src="/logo-black.png"
+              alt="PT Pilarindo Jaya Abadi"
+            />
+            <span id="logo-text" class="logo-text">PT Pilarindo Jaya Abadi</span
+            >
+          </a>
+        </div>
+
+        <!-- Desktop links -->
+        <div class="nav-links">
+          <a href="/" class="nav-link" data-page="home">Home</a>
+          <a href="/products" class="nav-link" data-page="products">Products</a>
+          <a href="/about" class="nav-link" data-page="about">About</a>
+          <a href="/gallery" class="nav-link" data-page="gallery">Gallery</a>
+          <a href="/contact" class="nav-link" data-page="contact">Contact</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="nav-right">
+          <a
+            href="/katalog.pdf"
+            class="nav-katalog"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><path d="M12 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+              ></path><polyline points="12 2 12 8 18 8"></polyline></svg
+            >
+            Katalog PDF
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=6285693533561"
+            target="_blank"
+            rel="noopener"
+            class="nav-wa"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
+              ><path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              ></path></svg
+            >
+            WhatsApp
+          </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button
+          id="burger"
+          class="burger"
+          aria-label="Open menu"
+          aria-expanded="false"
         >
-          <div class="flex lg:flex-1">
-            <a href="/" class="-m-1.5 p-1.5 flex items-center gap-2">
-              <span class="sr-only">PT Pilarindo Jaya Abadi</span>
-              <img class="h-8 w-auto" src="/logo-black.png" alt="" />
-              <img
-                class="h-9 w-auto"
-                src="https://placehold.co/800x100/transparent/black?text=PT Pilarindo Jaya Abadi&align=left"
-                alt="PT. Pilarindo Jaya Abadi"
-              />
-            </a>
-          </div>
-          <div id="openNavBar" class="flex lg:hidden">
-            <button
-              type="button"
-              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+
+      <!-- Progress bar -->
+      <div class="scroll-progress-bar" aria-hidden="true">
+        <div id="scroll-progress" class="scroll-progress-fill"></div>
+      </div>
+    </header>
+
+    <!-- ─────────────────── MOBILE DRAWER ─────────────────── -->
+    <div id="mobile-drawer" class="drawer" aria-hidden="true">
+      <div class="drawer-backdrop" id="drawer-backdrop"></div>
+      <div class="drawer-panel">
+        <div class="drawer-top">
+          <img
+            src="/logo-black.png"
+            class="h-8 w-auto"
+            alt="PT Pilarindo Jaya Abadi"
+          />
+          <button
+            id="drawer-close"
+            class="drawer-close"
+            aria-label="Close menu"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg
             >
-              <span class="sr-only">Open main menu</span>
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-              </svg>
-            </button>
-          </div>
-          <div class="hidden lg:flex lg:gap-x-12">
-            <a href="/" class="text-sm font-semibold leading-6 text-gray-900"
-              >Home</a
+          </button>
+        </div>
+
+        <nav class="drawer-nav">
+          <a href="/" class="drawer-link">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+              ></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg
             >
-            <a
-              href="/products"
-              class="text-sm font-semibold leading-6 text-gray-900">Products</a
+            Home
+          </a>
+          <a href="/products" class="drawer-link">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><rect x="2" y="3" width="7" height="7"></rect><rect
+                x="15"
+                y="3"
+                width="7"
+                height="7"></rect><rect x="2" y="14" width="7" height="7"
+              ></rect><rect x="15" y="14" width="7" height="7"></rect></svg
             >
-            <a
-              href="/about"
-              class="text-sm font-semibold leading-6 text-gray-900">About</a
+            Products
+          </a>
+          <a href="/about" class="drawer-link">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><circle cx="12" cy="12" r="10"></circle><line
+                x1="12"
+                y1="8"
+                x2="12"
+                y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"
+              ></line></svg
             >
-            <a
-              href="/gallery"
-              class="text-sm font-semibold leading-6 text-gray-900">Gallery</a
+            About
+          </a>
+          <a href="/gallery" class="drawer-link">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle
+                cx="8.5"
+                cy="8.5"
+                r="1.5"></circle><polyline points="21 15 16 10 5 21"
+              ></polyline></svg
             >
-            <a
-              href="/contact"
-              class="text-sm font-semibold leading-6 text-gray-900">Contact</a
+            Gallery
+          </a>
+          <a href="/contact" class="drawer-link">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.28-1.28a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+              ></path></svg
             >
-          </div>
-          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
-              href="/katalog.pdf"
-              class="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Katalog PDF <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
+            Contact
+          </a>
         </nav>
 
-        <!-- Mobile menu -->
-        <div
-          id="navBar"
-          class="hidden lg:hidden"
-          role="dialog"
-          aria-modal="true"
-        >
-          <div class="fixed inset-0 z-50"></div>
-          <div
-            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        <div class="drawer-footer">
+          <a href="/katalog.pdf" target="_blank" class="drawer-katalog">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              ><path d="M12 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+              ></path><polyline points="12 2 12 8 18 8"></polyline></svg
+            >
+            Download Katalog PDF
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=6285693533561"
+            target="_blank"
+            class="drawer-wa"
           >
-            <div class="flex items-center justify-between">
-              <a href="/" class="-m-1.5 p-1.5">
-                <span class="sr-only">PT Pilarindo Jaya Abadi</span>
-                <img class="h-8 w-auto" src="/logo-black.png" alt="" />
-              </a>
-              <button
-                id="closeNavBar"
-                type="button"
-                class="-m-2.5 rounded-md p-2.5 text-gray-700"
-              >
-                <span class="sr-only">Close menu</span>
-                <svg
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
-            </div>
-            <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6">
-                  <a
-                    href="/"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >Home</a
-                  >
-                  <a
-                    href="/products"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >Products</a
-                  >
-                  <a
-                    href="/about"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >About</a
-                  >
-                  <a
-                    href="/contact"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >Contact</a
-                  >
-                </div>
-                <div class="py-6">
-                  <a
-                    href="/"
-                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >Katalog PDF</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
+              ><path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              ></path></svg
+            >
+            Hubungi via WhatsApp
+          </a>
         </div>
-      </header>
-
-      <!-- ───── Main Content ───── -->
-      <main class="isolate">
-        <slot />
-      </main>
-
-      <!-- ───── Footer ───── -->
-      <div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
-        <Footer />
       </div>
     </div>
 
-    <!-- ───────────────────────────────────────
-         Floating WhatsApp Button
-    ─────────────────────────────────────────── -->
-    <div
-      id="wa-wrapper"
-      class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"
-    >
-      <!-- Chat bubble tooltip -->
-      <div
-        id="wa-tooltip"
-        class="hidden flex-col items-end gap-1 pointer-events-none select-none"
-        aria-hidden="true"
-      >
-        <div
-          class="relative bg-white rounded-2xl rounded-br-sm shadow-xl border border-gray-100 px-4 py-3 max-w-xs"
-        >
-          <!-- Ekor bubble -->
-          <span
-            class="absolute -bottom-2 right-4 w-3 h-3 bg-white border-b border-r border-gray-100 rotate-45"
-          ></span>
-          <p class="text-sm font-semibold text-gray-800">
-            Ada yang bisa kami bantu? 👋
-          </p>
-          <p class="text-xs text-gray-400 mt-0.5">
-            Biasanya membalas dalam hitungan menit
-          </p>
+    <!-- ─────────────────── MAIN ─────────────────── -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- ─────────────────── FOOTER ─────────────────── -->
+    <div class="mx-auto mt-24 max-w-7xl px-6 lg:px-8">
+      <Footer />
+    </div>
+
+    <!-- ─────────────────── WA FLOAT ─────────────────── -->
+    <div id="wa-wrapper" class="wa-float">
+      <div id="wa-tooltip" class="wa-tooltip hidden" aria-hidden="true">
+        <div class="wa-bubble">
+          <span class="wa-tail"></span>
+          <p class="wa-bubble-title">Ada yang bisa kami bantu? 👋</p>
+          <p class="wa-bubble-sub">Biasanya membalas dalam hitungan menit</p>
         </div>
       </div>
-
-      <!-- Button -->
-      <div class="relative">
-        <!-- Pulse ring (berhenti setelah 8 detik via JS) -->
-        <span
-          id="wa-ping"
-          aria-hidden="true"
-          class="absolute inset-0 rounded-full bg-green-400 opacity-70 animate-ping"
-        ></span>
+      <div class="wa-btn-wrap">
+        <span id="wa-ping" class="wa-ping"></span>
         <a
           id="wa-btn"
           href="https://api.whatsapp.com/send?phone=6285777111302"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat via WhatsApp"
-          class="relative flex items-center justify-center h-14 w-14 rounded-full bg-green-500 shadow-lg
-                 hover:bg-green-600 hover:shadow-green-400/50 hover:scale-110
-                 active:scale-95 transition-all duration-200 ease-out"
+          class="wa-btn"
         >
-          <!-- WA Icon -->
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"
@@ -277,7 +306,7 @@ const { title } = Astro.props;
             aria-hidden="true"
           >
             <path
-              d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.774L0 32l8.476-2.004A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.748-1.833l-.484-.287-5.028 1.188 1.227-4.9-.317-.502A13.267 13.267 0 0 1 2.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.778c-.398-.199-2.354-1.161-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.465.298-.863.1-.398-.199-1.681-.619-3.203-1.976-1.184-1.056-1.983-2.36-2.215-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.498-.033-.697-.1-.199-.896-2.161-1.228-2.958-.323-.775-.651-.67-.896-.682l-.763-.013c-.265 0-.696.1-.1061.498-.365.398-1.394 1.361-1.394 3.318s1.427 3.849 1.626 4.115c.199.265 2.808 4.287 6.803 6.014.951.41 1.693.655 2.271.838.954.303 1.823.26 2.51.158.766-.114 2.354-.963 2.686-1.893.332-.93.332-1.727.232-1.893-.1-.166-.365-.265-.763-.464z"
+              d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.774L0 32l8.476-2.004A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.748-1.833l-.484-.287-5.028 1.188 1.227-4.9-.317-.502A13.267 13.267 0 0 1 2.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.778c-.398-.199-2.354-1.161-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.465.298-.863.1-.398-.199-1.681-.619-3.203-1.976-1.184-1.056-1.983-2.36-2.215-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.498-.033-.697-.1-.199-.896-2.161-1.228-2.958-.323-.775-.651-.67-.896-.682l-.763-.013c-.265 0-.696.1-1.061.498-.365.398-1.394 1.361-1.394 3.318s1.427 3.849 1.626 4.115c.199.265 2.808 4.287 6.803 6.014.951.41 1.693.655 2.271.838.954.303 1.823.26 2.51.158.766-.114 2.354-.963 2.686-1.893.332-.93.332-1.727.232-1.893-.1-.166-.365-.265-.763-.464z"
             ></path>
           </svg>
         </a>
@@ -286,57 +315,757 @@ const { title } = Astro.props;
   </body>
 </html>
 
-<script>
-  // ── Navbar toggle ──
-  function initNavbar() {
-    const navBar = document.getElementById("navBar");
-    const closeNavBar = document.getElementById("closeNavBar");
-    const openNavBar = document.getElementById("openNavBar");
-    const toggleMenu = () => navBar?.classList.toggle("hidden");
-    closeNavBar?.addEventListener("click", toggleMenu);
-    openNavBar?.addEventListener("click", toggleMenu);
+<!-- ═══════════════════ NAVBAR STYLES ═══════════════════ -->
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
-  // ── WhatsApp floating button ──
-  function initWAButton() {
+  /* ── Header ── */
+  .nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    /* Starts transparent on blue hero */
+    background: transparent;
+    transition:
+      background 0.35s ease,
+      box-shadow 0.35s ease,
+      backdrop-filter 0.35s ease;
+  }
+
+  /* Scrolled state — dark navy glass */
+  .nav-header.scrolled {
+    background: rgba(8, 20, 42, 0.88);
+    backdrop-filter: blur(16px) saturate(1.4);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.06),
+      0 4px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Solid white — for non-hero pages */
+  .nav-header.solid {
+    background: #fff;
+    box-shadow:
+      0 1px 0 #e5e7eb,
+      0 2px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 66px;
+    gap: 1.5rem;
+  }
+
+  /* ── Logo ── */
+  .nav-logo-wrap {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: "Syne", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+  }
+
+  .nav-logo:hover {
+    opacity: 0.85;
+  }
+
+  .logo-img {
+    height: 32px;
+    width: auto;
+    transition: filter 0.35s;
+    /* White logo on dark hero */
+    filter: brightness(10);
+  }
+
+  /* When solid (non-hero pages), show dark logo */
+  .nav-header.solid .logo-img {
+    filter: none;
+  }
+
+  .logo-text {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.35s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+    font-size: 0.82rem;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-header.solid .logo-text {
+    color: #0d1a2d;
+  }
+
+  /* ── Desktop Links ── */
+  .nav-links {
+    display: none;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    .nav-links {
+      display: flex;
+    }
+  }
+
+  .nav-link {
+    position: relative;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    transition:
+      color 0.2s,
+      background 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 14px;
+    right: 14px;
+    height: 2px;
+    background: #60a5fa;
+    border-radius: 1px;
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+  }
+
+  .nav-link:hover {
+    color: #fff;
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Active link */
+  .nav-link.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-link.active::after {
+    transform: scaleX(1);
+  }
+
+  /* Solid mode links */
+  .nav-header.solid .nav-link {
+    color: #374151;
+  }
+  .nav-header.solid .nav-link:hover {
+    color: #0f2e68;
+    background: rgba(15, 46, 104, 0.06);
+  }
+  .nav-header.solid .nav-link.active {
+    color: #0f2e68;
+    background: rgba(15, 46, 104, 0.07);
+  }
+  .nav-header.solid .nav-link::after {
+    background: #0f2e68;
+  }
+
+  /* ── Nav Right ── */
+  .nav-right {
+    display: none;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .nav-right {
+      display: flex;
+    }
+  }
+
+  .nav-katalog {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition:
+      color 0.2s,
+      background 0.2s;
+  }
+
+  .nav-katalog:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.07);
+  }
+  .nav-header.solid .nav-katalog {
+    color: #6b7280;
+  }
+  .nav-header.solid .nav-katalog:hover {
+    color: #0f2e68;
+    background: rgba(15, 46, 104, 0.06);
+  }
+
+  .nav-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #16a34a;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 7px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      background 0.2s,
+      transform 0.15s;
+  }
+
+  .nav-wa:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+  }
+
+  /* ── Hamburger ── */
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+
+  .burger:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .nav-header.solid .burger:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .burger span {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 1px;
+    transition:
+      transform 0.3s,
+      opacity 0.3s,
+      background 0.35s;
+  }
+
+  .nav-header.solid .burger span {
+    background: #374151;
+  }
+
+  .burger.open span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .burger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .burger.open span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  @media (min-width: 1024px) {
+    .burger {
+      display: none;
+    }
+  }
+
+  /* ── Scroll progress bar ── */
+  .scroll-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .scroll-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    transition: width 0.1s linear;
+  }
+
+  .nav-header.solid .scroll-progress-bar {
+    background: #e5e7eb;
+  }
+
+  /* ═══ MOBILE DRAWER ═══ */
+  .drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+  .drawer.open {
+    pointer-events: auto;
+  }
+
+  .drawer-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .drawer.open .drawer-backdrop {
+    opacity: 1;
+  }
+
+  .drawer-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(340px, 90vw);
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.32s cubic-bezier(0.32, 0, 0.15, 1);
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .drawer.open .drawer-panel {
+    transform: translateX(0);
+  }
+
+  .drawer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 0.5rem;
+  }
+
+  .drawer-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    transition:
+      background 0.15s,
+      color 0.15s;
+  }
+
+  .drawer-close:hover {
+    background: #f3f4f6;
+    color: #111;
+  }
+
+  .drawer-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0.5rem 0;
+  }
+
+  .drawer-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #374151;
+    text-decoration: none;
+    transition:
+      background 0.15s,
+      color 0.15s;
+  }
+
+  .drawer-link svg {
+    color: #9ca3af;
+    flex-shrink: 0;
+    transition: color 0.15s;
+  }
+  .drawer-link:hover {
+    background: #f0f4ff;
+    color: #0f2e68;
+  }
+  .drawer-link:hover svg {
+    color: #0f2e68;
+  }
+
+  .drawer-footer {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .drawer-katalog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 11px;
+    border-radius: 9px;
+    border: 1px solid #e5e7eb;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #374151;
+    text-decoration: none;
+    transition:
+      background 0.15s,
+      border-color 0.15s;
+  }
+
+  .drawer-katalog:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+  }
+
+  .drawer-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 9px;
+    background: #16a34a;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .drawer-wa:hover {
+    background: #15803d;
+  }
+
+  /* ═══ WhatsApp Float ═══ */
+  .wa-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+  }
+
+  .wa-tooltip {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .wa-tooltip.hidden {
+    display: none;
+  }
+
+  .wa-bubble {
+    position: relative;
+    background: #fff;
+    border-radius: 14px 14px 2px 14px;
+    border: 1px solid #e5e7eb;
+    padding: 12px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 220px;
+  }
+
+  .wa-tail {
+    position: absolute;
+    bottom: -6px;
+    right: 16px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    transform: rotate(45deg);
+  }
+
+  .wa-bubble-title {
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  .wa-bubble-sub {
+    font-size: 0.72rem;
+    color: #9ca3af;
+    margin-top: 2px;
+  }
+
+  .wa-btn-wrap {
+    position: relative;
+  }
+
+  .wa-ping {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #4ade80;
+    opacity: 0.6;
+    animation: ping 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping {
+    75%,
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  .wa-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+    transition:
+      background 0.2s,
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+
+  .wa-btn:hover {
+    background: #16a34a;
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(34, 197, 94, 0.45);
+  }
+
+  .wa-btn:active {
+    transform: scale(0.95);
+  }
+
+  .h-7 {
+    height: 1.75rem;
+  }
+  .w-7 {
+    width: 1.75rem;
+  }
+  .fill-white {
+    fill: #fff;
+  }
+</style>
+
+<script>
+  let scrollCleanup = () => {};
+  let drawerCleanup = () => {};
+  let waCleanup = () => {};
+
+  function initAll() {
+    initWA();
+    initDrawer();
+    initScrollEffects();
+    setActiveLink();
+  }
+
+  // ── Active link highlight ──
+  function setActiveLink() {
+    const path = window.location.pathname;
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      const href = link.getAttribute("href") ?? "";
+      const isHome = href === "/" && path === "/";
+      const isOther = href !== "/" && path.startsWith(href);
+      link.classList.toggle("active", isHome || isOther);
+    });
+  }
+
+  // ── Scroll-aware navbar ──
+  function initScrollEffects() {
+    scrollCleanup();
+
+    const header = document.getElementById("site-header");
+    const fill = document.getElementById("scroll-progress");
+    if (!header) return;
+    const headerEl = header;
+
+    // Detect if page starts on a hero (dark) section
+    const isHeroPage = !!document.querySelector(".hero-root");
+
+    function update() {
+      const scrollY = window.scrollY;
+      const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      // Progress bar
+      if (fill)
+        fill.style.width =
+          maxScroll > 0 ? (scrollY / maxScroll) * 100 + "%" : "0%";
+
+      if (isHeroPage) {
+        // On hero page: transparent → scrolled (dark glass)
+        const threshold = 60;
+        headerEl.classList.toggle("scrolled", scrollY > threshold);
+        headerEl.classList.remove("solid");
+      } else {
+        // Non-hero pages: always solid white
+        headerEl.classList.add("solid");
+        headerEl.classList.remove("scrolled");
+      }
+    }
+
+    window.addEventListener("scroll", update, { passive: true });
+    update(); // run immediately
+
+    scrollCleanup = () => {
+      window.removeEventListener("scroll", update);
+    };
+  }
+
+  function initDrawer() {
+    drawerCleanup();
+
+    const drawer = document.getElementById("mobile-drawer");
+    const backdrop = document.getElementById("drawer-backdrop");
+    const closeBtn = document.getElementById("drawer-close");
+    const burger = document.getElementById("burger");
+
+    function openDrawer() {
+      drawer?.classList.add("open");
+      burger?.classList.add("open");
+      burger?.setAttribute("aria-expanded", "true");
+      drawer?.removeAttribute("aria-hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+      drawer?.classList.remove("open");
+      burger?.classList.remove("open");
+      burger?.setAttribute("aria-expanded", "false");
+      drawer?.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    burger?.addEventListener("click", openDrawer);
+    closeBtn?.addEventListener("click", closeDrawer);
+    backdrop?.addEventListener("click", closeDrawer);
+
+    // Close on nav links
+    const drawerLinks = drawer
+      ? [...drawer.querySelectorAll(".drawer-link")]
+      : [];
+    drawerLinks.forEach((link) => {
+      link.addEventListener("click", closeDrawer);
+    });
+
+    // ESC key
+    const onKeyDown = /** @type {(e: KeyboardEvent) => void} */ (
+      (e: any) => {
+        if (e.key === "Escape" && drawer?.classList.contains("open")) {
+          closeDrawer();
+        }
+      }
+    );
+    document.addEventListener("keydown", onKeyDown);
+
+    drawerCleanup = () => {
+      burger?.removeEventListener("click", openDrawer);
+      closeBtn?.removeEventListener("click", closeDrawer);
+      backdrop?.removeEventListener("click", closeDrawer);
+      drawerLinks.forEach((link) => {
+        link.removeEventListener("click", closeDrawer);
+      });
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }
+
+  // ── WhatsApp tooltip ──
+  function initWA() {
+    waCleanup();
+
     const waBtn = document.getElementById("wa-btn");
     const tooltip = document.getElementById("wa-tooltip");
     const waPing = document.getElementById("wa-ping");
+    let showTimeoutId = -1;
+    let hideTimeoutId = -1;
+    let pingTimeoutId = -1;
 
-    function showTooltip() {
+    function show() {
       tooltip?.classList.remove("hidden");
-      tooltip?.classList.add("flex");
     }
-    function hideTooltip() {
+    function hide() {
       tooltip?.classList.add("hidden");
-      tooltip?.classList.remove("flex");
     }
 
-    // Otomatis muncul setelah 3 detik, sekali per session
-    if (tooltip && !sessionStorage.getItem("wa-tooltip-shown")) {
-      setTimeout(() => {
-        showTooltip();
-        sessionStorage.setItem("wa-tooltip-shown", "1");
-        // Auto-tutup setelah 6 detik
-        setTimeout(hideTooltip, 6000);
+    if (tooltip && !sessionStorage.getItem("wa-shown")) {
+      showTimeoutId = window.setTimeout(() => {
+        show();
+        sessionStorage.setItem("wa-shown", "1");
+        hideTimeoutId = window.setTimeout(hide, 6000);
       }, 3000);
     }
 
-    // Hover desktop
-    waBtn?.addEventListener("mouseenter", showTooltip);
-    waBtn?.addEventListener("mouseleave", hideTooltip);
+    waBtn?.addEventListener("mouseenter", show);
+    waBtn?.addEventListener("mouseleave", hide);
+    pingTimeoutId = window.setTimeout(
+      () => waPing?.classList.remove("wa-ping"),
+      8000,
+    );
 
-    // Hentikan animasi ping setelah 8 detik
-    setTimeout(() => waPing?.classList.remove("animate-ping"), 8000);
+    waCleanup = () => {
+      waBtn?.removeEventListener("mouseenter", show);
+      waBtn?.removeEventListener("mouseleave", hide);
+      if (showTimeoutId !== -1) window.clearTimeout(showTimeoutId);
+      if (hideTimeoutId !== -1) window.clearTimeout(hideTimeoutId);
+      if (pingTimeoutId !== -1) window.clearTimeout(pingTimeoutId);
+    };
   }
 
-  // Jalankan saat pertama load & setiap navigasi Astro View Transition
-  document.addEventListener("DOMContentLoaded", () => {
-    initNavbar();
-    initWAButton();
-  });
-  document.addEventListener("astro:page-load", () => {
-    initNavbar();
-    initWAButton();
-  });
+  document.addEventListener("DOMContentLoaded", initAll);
+  document.addEventListener("astro:page-load", initAll);
 </script>

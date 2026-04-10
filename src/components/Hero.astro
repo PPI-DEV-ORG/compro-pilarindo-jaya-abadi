@@ -1,199 +1,504 @@
-<div class="">
-  <div
-    class="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20"
-  >
-    <div
-      class="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40"
+---
+// Hero.astro — Full-height, centered text, engine photo background
+---
+
+<section class="hero-root">
+  <!-- Engine Photo Background -->
+  <div class="bg-photo" aria-hidden="true"></div>
+
+  <!-- Multi-layer overlay for depth and readability -->
+  <div class="overlay-base" aria-hidden="true"></div>
+  <div class="overlay-radial" aria-hidden="true"></div>
+  <div class="overlay-vignette" aria-hidden="true"></div>
+
+  <!-- Animated Gear Background (subtle, on top of photo) -->
+  <div class="gear-bg" aria-hidden="true">
+    <svg class="gear g1" viewBox="0 0 200 200"
+      ><path
+        d="M100 28 L113 8 L126 28 L148 21 L148 45 L168 52 L159 72 L174 86 L160 100 L172 116 L154 125 L154 149 L130 149 L123 169 L104 162 L100 180 L96 162 L77 169 L70 149 L46 149 L46 125 L28 116 L40 100 L26 86 L41 72 L32 52 L52 45 L52 21 L74 28 Z M100 70 A30 30 0 1 0 100.01 70 Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"></path></svg
     >
-      <div class="px-6 lg:px-0 lg:pt-4">
-        <div class="mx-auto max-w-2xl">
-          <div class="max-w-lg">
-            <div class="mt-24 sm:mt-32 lg:mt-16">
-              <a href="" class="inline-flex space-x-6">
-                <span
-                  class="rounded-full bg-blue-900/80 px-3 py-1 text-sm font-semibold leading-6 text-white ring-1 ring-inset ring-blue-900"
-                  >Solusi Suku Cadang</span
-                >
-                <span
-                  class="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600"
-                >
-                  <span>Kualitas Terjamin</span>
-                  <svg
-                    class="h-5 w-5 text-gray-400"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                </span>
-              </a>
-            </div>
-            <h1
-              class="mt-10 text-4xl font-roboto tracking-tight text-gray-900 sm:text-6xl"
-            >
-              Solusi Terlengkap Sparepart Alat Berat, Marine Engine & Overhaul
-              Mesin
-            </h1>
-            <p class="mt-6 text-lg text-gray-600">
-              Kami hadir sebagai penyedia distribusi suku cadang, marine engine,
-              dan jasa overhaul yang menawarkan solusi profesional dan efisien
-              untuk berbagai sektor industri di Indonesia.
-            </p>
-            <div class="mt-10 flex items-center gap-x-6">
-              <a
-                href="https://api.whatsapp.com/send?phone=6285693533561&text=Halo%2C%20Pilarindo%20Jaya%20Abadi%20%F0%9F%91%8B%F0%9F%8F%BC"
-                class="rounded-md bg-white border border-black px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-              >
-                Hubungi Kami
-              </a>
-              <a
-                href="/products"
-                class="text-sm font-semibold leading-6 text-gray-900"
-                >Lihat Produk Kami<span aria-hidden="true">→</span></a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+    <svg class="gear g2" viewBox="0 0 200 200"
+      ><path
+        d="M100 28 L113 8 L126 28 L148 21 L148 45 L168 52 L159 72 L174 86 L160 100 L172 116 L154 125 L154 149 L130 149 L123 169 L104 162 L100 180 L96 162 L77 169 L70 149 L46 149 L46 125 L28 116 L40 100 L26 86 L41 72 L32 52 L52 45 L52 21 L74 28 Z M100 70 A30 30 0 1 0 100.01 70 Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"></path></svg
+    >
+    <svg class="gear g3" viewBox="0 0 160 160"
+      ><path
+        d="M80 20 L91 5 L102 20 L120 14 L120 34 L136 40 L128 56 L140 68 L128 80 L136 94 L120 100 L120 120 L102 120 L94 136 L80 128 L80 144 L80 128 L66 136 L58 120 L40 120 L40 100 L24 94 L32 80 L20 68 L32 56 L24 40 L40 34 L40 14 Z M80 52 A28 28 0 1 0 80.01 52 Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"></path></svg
+    >
+    <svg class="gear g4" viewBox="0 0 120 120"
+      ><path
+        d="M60 14 L69 3 L78 14 L92 9 L92 24 L106 30 L100 44 L110 55 L100 65 L106 79 L92 84 L92 100 L78 100 L70 112 L60 106 L60 118 L60 106 L50 112 L42 100 L28 100 L28 84 L14 79 L20 65 L10 55 L20 44 L14 30 L28 24 L28 9 Z M60 40 A20 20 0 1 0 60.01 40 Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"></path></svg
+    >
+    <svg class="gear g5" viewBox="0 0 200 200"
+      ><path
+        d="M100 28 L113 8 L126 28 L148 21 L148 45 L168 52 L159 72 L174 86 L160 100 L172 116 L154 125 L154 149 L130 149 L123 169 L104 162 L100 180 L96 162 L77 169 L70 149 L46 149 L46 125 L28 116 L40 100 L26 86 L41 72 L32 52 L52 45 L52 21 L74 28 Z M100 70 A30 30 0 1 0 100.01 70 Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"></path></svg
+    >
+    <svg class="gear g6" viewBox="0 0 140 140"
+      ><path
+        d="M70 18 L80 5 L90 18 L106 12 L106 30 L120 36 L113 51 L124 62 L113 73 L120 88 L106 93 L106 111 L90 111 L82 126 L70 119 L70 133 L70 119 L58 126 L50 111 L34 111 L34 93 L20 88 L27 73 L16 62 L27 51 L20 36 L34 30 L34 12 Z M70 46 A24 24 0 1 0 70.01 46 Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"></path></svg
+    >
+  </div>
 
-      <div
-        class="mt-20 px-1 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen relative"
-      >
-        <img
-          id="image"
-          class="rounded-xl top-0 left-0 w-full h-auto opacity-0 transition-opacity duration-1000 ease-in-out shadow-xl"
-          src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=1000&auto=format&fit=crop"
-        />
+  <!-- Subtle grid overlay -->
+  <div class="grid-overlay" aria-hidden="true"></div>
 
-        <div
-          class="absolute top-0 right-0 rounded-bl-xl p-6 bg-gray-50 flex items-center"
-        >
-          <svg
-            id="dot-0"
-            class="h-2 w-2 inline fill-black mr-2 transition-colors duration-500 cursor-pointer"
-            viewBox="0 0 6 6"
-            aria-hidden="true"
-          >
-            <circle cx="3" cy="3" r="3"></circle>
-          </svg>
-          <svg
-            id="dot-1"
-            class="h-2 w-2 inline fill-gray-300 mr-2 transition-colors duration-500 cursor-pointer"
-            viewBox="0 0 6 6"
-            aria-hidden="true"
-          >
-            <circle cx="3" cy="3" r="3"></circle>
-          </svg>
-          <svg
-            id="dot-2"
-            class="h-2 w-2 inline fill-gray-300 mr-2 transition-colors duration-500 cursor-pointer"
-            viewBox="0 0 6 6"
-            aria-hidden="true"
-          >
-            <circle cx="3" cy="3" r="3"></circle>
-          </svg>
-        </div>
-
-        <div
-          class="absolute bottom-0 right-0 rounded-full m-6 pl-1 pr-4 py-1 bg-black bg-opacity-75 flex items-center"
-        >
-          <img
-            class="inline mr-2 h-9 w-9 rounded-full"
-            src="https://ui-avatars.com/api/?name=Sumanto&background=0D8ABC&color=fff"
-            alt="Manajemen"
-          />
-          <div class="flex flex-col">
-            <span class="text-white text-sm font-roboto">Sumanto</span>
-            <span class="text-gray-200 text-xs font-nunito"
-              >Key Leader - Logistik</span
-            >
-          </div>
-        </div>
-      </div>
+  <!-- Hero Content -->
+  <div class="hero-center">
+    <div class="badge-row">
+      <span class="live-dot"></span>
+      Distributor Resmi · Bergaransi · Berpengalaman
     </div>
-    <div
-      class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32"
-    >
+
+    <h1 class="hero-h1">
+      Solusi Terlengkap<br />
+      <em class="h1-em">Sparepart Alat Berat</em>
+    </h1>
+
+    <p class="hero-sub">
+      Distribusi suku cadang, marine engine &amp; jasa overhaul<br
+        class="hide-sm"
+      />
+      untuk berbagai sektor industri di seluruh Indonesia.
+    </p>
+
+    <div class="hero-pills">
+      <span class="pill">⚙️ Sparepart</span>
+      <span class="pill">⚓ Marine Engine</span>
+      <span class="pill">🔧 Overhaul</span>
+    </div>
+
+    <div class="hero-actions">
+      <a
+        href="https://api.whatsapp.com/send?phone=6285693533561"
+        class="btn-wa"
+      >
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"
+          ><path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+          ></path></svg
+        >
+        Hubungi Kami
+      </a>
+      <a href="/products" class="btn-outline">
+        Lihat Produk
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg
+        >
+      </a>
     </div>
   </div>
-</div>
 
-<script>
-  function initSlideshow() {
-    const images = ["./kapal.jpg", "./excavator.jpg", "./gudang.jpg"];
-    let currentIndex = 0;
-    let slideshowInterval: ReturnType<typeof setInterval> | null = null;
+  <!-- Scroll cue -->
+  <div class="scroll-cue" aria-hidden="true">
+    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+  </div>
 
-    const img = document.getElementById("image") as HTMLImageElement | null;
-    const dots = [
-      document.getElementById("dot-0"),
-      document.getElementById("dot-1"),
-      document.getElementById("dot-2"),
-    ];
+  <!-- Wave transition -->
+  <div class="wave-out" aria-hidden="true">
+    <svg
+      viewBox="0 0 1440 100"
+      preserveAspectRatio="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0,50 C180,100 360,0 540,50 C720,100 900,10 1080,50 C1260,90 1350,20 1440,50 L1440,100 L0,100 Z"
+        fill="#f8f9fb"></path>
+    </svg>
+  </div>
+</section>
 
-    if (!img) {
-      console.warn("[Hero] #image element not found; skipping slideshow.");
-      return;
-    }
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap");
 
-    // Bersihkan interval lama (penting saat View Transitions)
-    if ((window as any).__heroSlideshowInterval) {
-      clearInterval((window as any).__heroSlideshowInterval);
-    }
-
-    function updateDots(activeIndex: number) {
-      dots.forEach((dot, i) => {
-        if (!dot) return;
-        dot.classList.toggle("fill-black", i === activeIndex);
-        dot.classList.toggle("fill-gray-300", i !== activeIndex);
-      });
-    }
-
-    function showImage(index: number) {
-      if (!img) return;
-      currentIndex = index;
-      img.onload = () => img.classList.remove("opacity-0");
-      img.src = images[index];
-      // Handle cached image — onload tidak akan fire
-      if (img.complete) img.classList.remove("opacity-0");
-      updateDots(index);
-    }
-
-    function changeImage() {
-      if (!img) return;
-      img.classList.add("opacity-0");
-      setTimeout(() => {
-        showImage((currentIndex + 1) % images.length);
-      }, 1000);
-    }
-
-    function startInterval() {
-      slideshowInterval = setInterval(changeImage, 4000);
-      (window as any).__heroSlideshowInterval = slideshowInterval;
-    }
-
-    // Klik dot untuk pindah slide manual
-    dots.forEach((dot, i) => {
-      dot?.addEventListener("click", () => {
-        if (i === currentIndex) return;
-        // Reset timer agar tidak loncat terlalu cepat setelah klik manual
-        if (slideshowInterval) clearInterval(slideshowInterval);
-        img.classList.add("opacity-0");
-        setTimeout(() => {
-          showImage(i);
-          startInterval();
-        }, 1000);
-      });
-    });
-
-    showImage(0);
-    startInterval();
+  /* ─────────────────────────────────────────
+     ROOT — photo bg + layered overlays
+  ───────────────────────────────────────── */
+  .hero-root {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: "Plus Jakarta Sans", sans-serif;
   }
 
-  document.addEventListener("DOMContentLoaded", initSlideshow);
-  document.addEventListener("astro:page-load", initSlideshow);
-</script>
+  /* 1. The engine photo */
+  .bg-photo {
+    position: absolute;
+    inset: 0;
+    background-image: url("/hero-background.jpg");
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
+    /* slow, subtle Ken-Burns zoom */
+    animation: kb 22s ease-in-out infinite alternate;
+    transform-origin: center center;
+    will-change: transform;
+  }
+  @keyframes kb {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.07);
+    }
+  }
+
+  /* 2. Base dark-blue tint — kills the grey tones, aligns to brand palette */
+  .overlay-base {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 18, 34, 0.72); /* dark navy at 72% */
+  }
+
+  /* 3. Blue gradient spotlight from top-center */
+  .overlay-radial {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        ellipse 75% 50% at 50% 0%,
+        rgba(30, 86, 176, 0.55) 0%,
+        transparent 70%
+      ),
+      linear-gradient(to bottom, transparent 40%, rgba(6, 18, 34, 0.85) 100%);
+  }
+
+  /* 4. Soft vignette around all edges */
+  .overlay-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 110% 110% at 50% 50%,
+      transparent 45%,
+      rgba(4, 12, 28, 0.62) 100%
+    );
+  }
+
+  /* ─── Gear animations ─── */
+  .gear-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.055); /* slightly more visible over photo */
+    z-index: 2;
+  }
+
+  .gear {
+    position: absolute;
+  }
+  .g1 {
+    width: 520px;
+    height: 520px;
+    top: -140px;
+    right: -100px;
+    animation: cw 50s linear infinite;
+  }
+  .g2 {
+    width: 220px;
+    height: 220px;
+    top: 60px;
+    right: 290px;
+    animation: ccw 30s linear infinite;
+    color: rgba(96, 165, 250, 0.07);
+  }
+  .g3 {
+    width: 300px;
+    height: 300px;
+    bottom: 60px;
+    right: 60px;
+    animation: cw 42s linear infinite;
+  }
+  .g4 {
+    width: 160px;
+    height: 160px;
+    top: 38%;
+    left: -50px;
+    animation: ccw 25s linear infinite;
+  }
+  .g5 {
+    width: 180px;
+    height: 180px;
+    bottom: -40px;
+    left: 18%;
+    animation: cw 38s linear infinite;
+    color: rgba(96, 165, 250, 0.05);
+  }
+  .g6 {
+    width: 240px;
+    height: 240px;
+    top: 15%;
+    left: 8%;
+    animation: ccw 44s linear infinite;
+  }
+
+  @keyframes cw {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes ccw {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  /* ─── Grid overlay ─── */
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.014) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* ─── Hero content ─── */
+  .hero-center {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #fff;
+    padding: 9rem 1.5rem 8rem;
+    max-width: 660px;
+    margin: 0 auto;
+  }
+
+  .badge-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    font-size: 0.71rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.78);
+    margin-bottom: 1.6rem;
+    animation: up 0.65s ease both;
+  }
+
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 7px #4ade80;
+    animation: blink 2s ease infinite;
+    flex-shrink: 0;
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .hero-h1 {
+    font-family: "Syne", sans-serif;
+    font-size: clamp(1.85rem, 4vw, 2.85rem);
+    font-weight: 800;
+    line-height: 1.13;
+    letter-spacing: -0.025em;
+    color: #fff;
+    /* subtle text shadow to lift off photo */
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+    margin: 0 0 1rem;
+    animation: up 0.65s 0.09s ease both;
+  }
+
+  .h1-em {
+    font-style: normal;
+    background: linear-gradient(90deg, #60a5fa, #93c5fd 60%, #bfdbfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(0.88rem, 1.35vw, 1.02rem);
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.64);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.6rem;
+    animation: up 0.65s 0.17s ease both;
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: center;
+    margin-bottom: 1.9rem;
+    animation: up 0.65s 0.24s ease both;
+  }
+
+  .pill {
+    padding: 4px 13px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    font-size: 0.73rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    animation: up 0.65s 0.31s ease both;
+  }
+
+  .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #fff;
+    padding: 0.68rem 1.4rem;
+    border-radius: 8px;
+    font-size: 0.87rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(34, 197, 94, 0.32);
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+  .btn-wa:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 26px rgba(34, 197, 94, 0.42);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.87rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.68rem 1.2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  /* ─── Scroll cue ─── */
+  .scroll-cue {
+    position: absolute;
+    bottom: 5.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+  .scroll-mouse {
+    width: 20px;
+    height: 32px;
+    border: 1.5px solid rgba(255, 255, 255, 0.22);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+  }
+  .scroll-dot {
+    width: 3px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 2px;
+    animation: drop 1.8s ease infinite;
+  }
+  @keyframes drop {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+    80% {
+      transform: translateY(9px);
+      opacity: 0;
+    }
+  }
+
+  /* ─── Wave transition ─── */
+  .wave-out {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 0;
+    z-index: 5;
+  }
+  .wave-out svg {
+    display: block;
+    width: 100%;
+    height: 70px;
+  }
+
+  @keyframes up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hide-sm {
+    display: none;
+  }
+  @media (min-width: 640px) {
+    .hide-sm {
+      display: inline;
+    }
+  }
+</style>
