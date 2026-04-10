@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import type { GalleryItem } from "../../types/global";
+import { getApiBase } from "../../utils/apiBase";
 
 export default function GalleryComponent() {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
-
   const [items, setItems] = useState<GalleryItem[]>([]);
   const [cursor, setCursor] = useState<string | null>(null);
   const [hasMore, setHasMore] = useState(true);
@@ -23,38 +23,36 @@ export default function GalleryComponent() {
   const nextSelectedItem = () => {
     if (!selectedItem) return;
     const currentIndex = items.findIndex((item) => item.id === selectedItem.id);
-    const nextIndex = (currentIndex + 1) % items.length;
-    setSelectedItem(items[nextIndex]);
+    setSelectedItem(items[(currentIndex + 1) % items.length]);
   };
 
   const prevSelectedItem = () => {
     if (!selectedItem) return;
     const currentIndex = items.findIndex((item) => item.id === selectedItem.id);
-    const prevIndex = (currentIndex - 1 + items.length) % items.length;
-    setSelectedItem(items[prevIndex]);
+    setSelectedItem(items[(currentIndex - 1 + items.length) % items.length]);
   };
 
   async function load(): Promise<void> {
     if (loading || !hasMore) return;
     setLoading(true);
 
-    const url = new URL(`${import.meta.env.PUBLIC_API_SERVER}/api/gallery`);
+    const url = new URL(`${getApiBase()}/api/gallery`);
     url.searchParams.set("pageSize", pageSize.toString());
-
     if (cursor) url.searchParams.set("cursor", cursor);
 
-    const res = await fetch(url.toString());
-    if (!res.ok) {
+    try {
+      const res = await fetch(url.toString());
+      if (!res.ok) throw new Error("Failed to load gallery");
+
+      const data = await res.json();
+      setItems((prev) => [...prev, ...data.items]);
+      setCursor(data.nextCursor);
+      setHasMore(data.hasMore);
+    } catch (error) {
+      console.error(error);
+    } finally {
       setLoading(false);
-      throw new Error("Failed to load gallery");
     }
-
-    const data = await res.json();
-
-    setItems((prev) => [...prev, ...data.items]);
-    setCursor(data.nextCursor);
-    setHasMore(data.hasMore);
-    setLoading(false);
   }
 
   useEffect(() => {
@@ -113,7 +111,6 @@ export default function GalleryComponent() {
                         </span>
                       ))}
                     </div>
-
                     <h3 className="text-lg font-semibold mt-1">{item.title}</h3>
                   </div>
                 </div>
@@ -142,7 +139,6 @@ export default function GalleryComponent() {
                   className="relative max-w-5xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  {/* Close Button */}
                   <button
                     onClick={closeLightbox}
                     className="absolute top-4 right-4 text-gray-700 hover:text-gray-900 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-transform hover:scale-110"
@@ -150,7 +146,6 @@ export default function GalleryComponent() {
                     ✕
                   </button>
 
-                  {/* Image Section */}
                   <div className="flex-1 flex items-center justify-center bg-gray-100 p-4">
                     <img
                       src={selectedItem.imageUrl}
@@ -159,7 +154,6 @@ export default function GalleryComponent() {
                     />
                   </div>
 
-                  {/* Content Section */}
                   <div className="flex-1 p-6 flex flex-col justify-between gap-4">
                     <div>
                       <h2 className="text-2xl font-semibold text-gray-800">
@@ -182,7 +176,6 @@ export default function GalleryComponent() {
                       ))}
                     </div>
 
-                    {/* Optional navigation */}
                     <div className="mt-6 flex justify-between">
                       <button
                         onClick={prevSelectedItem}

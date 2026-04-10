@@ -9,7 +9,7 @@ function parseNumber(value: string | undefined, defaultValue: number) {
 }
 
 function parseSortDir(
-  value: string | undefined
+  value: string | undefined,
 ): "ascending" | "descending" | undefined {
   if (value === "ascending" || value === "descending") return value;
   return undefined;
@@ -18,7 +18,7 @@ function parseSortDir(
 export const GET: APIRoute = async ({ request }) => {
   const url = new URL(request.url);
   const query: Record<string, string> = Object.fromEntries(
-    url.searchParams.entries()
+    url.searchParams.entries(),
   );
   const { pageSize = "9", cursor, sortDirection } = query;
   const categories = url.searchParams.getAll("category");
@@ -46,6 +46,6 @@ export const GET: APIRoute = async ({ request }) => {
         "Access-Control-Allow-Methods": "GET,OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type",
       },
-    }
+    },
   );
 };

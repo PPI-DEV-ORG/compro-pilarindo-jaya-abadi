@@ -5,6 +5,8 @@ import { FilterSidebar } from "./FilterSidebar";
 import { LayoutGrid, List, SlidersHorizontal } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { ProductCard } from "./ProductCard";
+import { ProductDetailDialog } from "./ProductDetailDialog";
+import { getApiBase } from "../../utils/apiBase";
 
 export default function ProductComponent() {
   const [listProduct, setListProduct] = useState<ProductItem[]>([]);
@@ -16,13 +18,13 @@ export default function ProductComponent() {
   const [hasMore, setHasMore] = useState(true);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [quickViewProduct, setQuickViewProduct] = useState<ProductItem | null>(
-    null
+    null,
   );
 
   async function load(): Promise<void> {
     setLoading(true);
 
-    const url = new URL("http://localhost:4321/api/product");
+    const url = new URL(`${getApiBase()}/api/product`);
     url.searchParams.set("pageSize", pageSize.toString());
 
     selectedBrands.forEach((b) => url.searchParams.append("brand", b));
@@ -30,7 +32,7 @@ export default function ProductComponent() {
 
     try {
       const res = await fetch(url.toString());
-      if (!res.ok) throw new Error("Failed to load gallery");
+      if (!res.ok) throw new Error("Failed to load products");
 
       const data = await res.json();
       setHasMore(data.hasMore);
@@ -47,91 +49,94 @@ export default function ProductComponent() {
     load();
   }, [selectedBrands, selectedCategories]);
 
+  const handleClearAll = () => {
+    setSelectedBrands([]);
+    setSelectedCategories([]);
+  };
+
   return (
-    <div className="bg-white py-24 sm:py-32" id="tentang-kami">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-border">
-          {/* Results Count */}
-          <p className="text-sm text-muted-foreground">
-            Showing{" "}
-            <span className="font-semibold text-foreground">
-              {listProduct.length}
-            </span>{" "}
-            products
-          </p>
-          <div className="flex items-center gap-3">
-            {/* View Mode Toggle */}
-            <div className="hidden sm:flex items-center border border-border rounded-md overflow-hidden">
-              <button
-                onClick={() => setViewMode("grid")}
-                className={cn(
-                  "p-2 transition-colors",
-                  viewMode === "grid"
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-card hover:bg-secondary"
-                )}
-                aria-label="Grid view"
-              >
-                <LayoutGrid className="h-4 w-4" />
-              </button>
-              <button
-                onClick={() => setViewMode("list")}
-                className={cn(
-                  "p-2 transition-colors",
-                  viewMode === "list"
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-card hover:bg-secondary"
-                )}
-                aria-label="List view"
-              >
-                <List className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="flex gap-8">
-          {/* Desktop Sidebar */}
-          <div className="hidden lg:block w-72 flex-shrink-0">
-            <div className="sticky top-32">
-              <FilterSidebar
-                brands={ALL_BRANDS.map((brand, index) => ({
-                  id: index.toString(),
-                  label: brand,
-                }))}
-                categories={ALL_CATEGORIES.map((category, index) => ({
-                  id: index.toString(),
-                  label: category,
-                }))}
-                selectedBrands={selectedBrands}
-                selectedCategories={selectedCategories}
-                priceRange={[0, 100000]}
-                maxPrice={100000}
-                onBrandChange={setSelectedBrands}
-                onCategoryChange={setSelectedCategories}
-                onPriceChange={() => {}}
-                onClearAll={() => {}}
-              />
+    <>
+      <div className="bg-white py-24 sm:py-32" id="tentang-kami">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-border">
+            <p className="text-sm text-muted-foreground">
+              Showing{" "}
+              <span className="font-semibold text-foreground">
+                {listProduct.length}
+              </span>{" "}
+              products
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="hidden sm:flex items-center border border-border rounded-md overflow-hidden">
+                <button
+                  onClick={() => setViewMode("grid")}
+                  className={cn(
+                    "p-2 transition-colors",
+                    viewMode === "grid"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-card hover:bg-secondary",
+                  )}
+                  aria-label="Grid view"
+                >
+                  <LayoutGrid className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => setViewMode("list")}
+                  className={cn(
+                    "p-2 transition-colors",
+                    viewMode === "list"
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-card hover:bg-secondary",
+                  )}
+                  aria-label="List view"
+                >
+                  <List className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="flex-1">
-            {loading ? (
-              <div className="text-center py-16">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center">
-                  <SlidersHorizontal className="h-10 w-10 text-muted-foreground" />
-                </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                  Loading...
-                </h3>
+          <div className="flex gap-8">
+            <div className="hidden lg:block w-72 flex-shrink-0">
+              <div className="sticky top-32">
+                <FilterSidebar
+                  brands={ALL_BRANDS.map((brand, index) => ({
+                    id: index.toString(),
+                    label: brand,
+                  }))}
+                  categories={ALL_CATEGORIES.map((category, index) => ({
+                    id: index.toString(),
+                    label: category,
+                  }))}
+                  selectedBrands={selectedBrands}
+                  selectedCategories={selectedCategories}
+                  priceRange={[0, 100000]}
+                  maxPrice={100000}
+                  onBrandChange={setSelectedBrands}
+                  onCategoryChange={setSelectedCategories}
+                  onPriceChange={() => {}}
+                  onClearAll={handleClearAll}
+                />
               </div>
-            ) : listProduct.length > 0 ? (
-              <>
+            </div>
+
+            <div className="flex-1">
+              {loading ? (
+                <div className="text-center py-16">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center">
+                    <SlidersHorizontal className="h-10 w-10 text-muted-foreground animate-spin" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                    Loading...
+                  </h3>
+                </div>
+              ) : listProduct.length > 0 ? (
                 <div
                   className={cn(
                     "grid gap-6",
                     viewMode === "grid"
                       ? "grid-cols-1 sm:grid-cols-2 xl:grid-cols-3"
-                      : "grid-cols-1"
+                      : "grid-cols-1",
                   )}
                 >
                   {listProduct.map((product, index) => (
@@ -143,35 +148,34 @@ export default function ProductComponent() {
                     />
                   ))}
                 </div>
-
-                {/* Pagination */}
-                {/* {totalPages > 1 && (
-                  <div className="mt-12">
-                    <Pagination
-                      currentPage={currentPage}
-                      totalPages={totalPages}
-                      onPageChange={handlePageChange}
-                    />
+              ) : (
+                <div className="text-center py-16">
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center">
+                    <SlidersHorizontal className="h-10 w-10 text-muted-foreground" />
                   </div>
-                )} */}
-              </>
-            ) : (
-              <div className="text-center py-16">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center">
-                  <SlidersHorizontal className="h-10 w-10 text-muted-foreground" />
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                    No products found
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    Try adjusting your filters or search terms
+                  </p>
+                  <button
+                    onClick={handleClearAll}
+                    className="px-4 py-2 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-400 transition-colors"
+                  >
+                    Clear All Filters
+                  </button>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
-                  No products found
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  Try adjusting your filters or search terms
-                </p>
-                <button onClick={() => {}}>Clear All Filters</button>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      <ProductDetailDialog
+        product={quickViewProduct}
+        onClose={() => setQuickViewProduct(null)}
+      />
+    </>
   );
 }
