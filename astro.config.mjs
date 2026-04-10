@@ -12,3 +12,6 @@ export default defineConfig({
   output: "server",
   adapter: vercel(),
 });
+
+// client
+// output: "static"

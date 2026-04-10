@@ -39,8 +39,6 @@ const { title } = Astro.props;
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pilarindojayaabadi.com" />
-
-    <!-- Gambar preview: gunakan URL absolut (harus HTTPS) -->
     <meta
       property="og:image"
       content="https://pilarindojayaabadi.com/logo-black.png"
@@ -52,8 +50,6 @@ const { title } = Astro.props;
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-
-    <!-- Optional: fallback untuk Twitter cards -->
     <meta
       name="twitter:card"
       content="https://pilarindojayaabadi.com/logo-black.png"
@@ -72,7 +68,7 @@ const { title } = Astro.props;
   </head>
   <body class="h-full font-nunito">
     <div class="bg-white">
-      <!-- Header -->
+      <!-- ───── Header ───── -->
       <header class="absolute inset-x-0 top-0 z-50">
         <nav
           class="flex items-center justify-between p-6 lg:px-8"
@@ -81,7 +77,6 @@ const { title } = Astro.props;
           <div class="flex lg:flex-1">
             <a href="/" class="-m-1.5 p-1.5 flex items-center gap-2">
               <span class="sr-only">PT Pilarindo Jaya Abadi</span>
-
               <img class="h-8 w-auto" src="/logo-black.png" alt="" />
               <img
                 class="h-9 w-auto"
@@ -136,18 +131,19 @@ const { title } = Astro.props;
             <a
               href="/katalog.pdf"
               class="text-sm font-semibold leading-6 text-gray-900"
-              >Katalog PDF <span aria-hidden="true">&rarr;</span></a
             >
+              Katalog PDF <span aria-hidden="true">&rarr;</span>
+            </a>
           </div>
         </nav>
-        <!-- Mobile menu, show/hide based on menu open state. -->
+
+        <!-- Mobile menu -->
         <div
           id="navBar"
           class="hidden lg:hidden"
           role="dialog"
           aria-modal="true"
         >
-          <!-- Background backdrop, show/hide based on slide-over state. -->
           <div class="fixed inset-0 z-50"></div>
           <div
             class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
@@ -206,9 +202,8 @@ const { title } = Astro.props;
                   <a
                     href="/"
                     class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Katalog PDF</a
                   >
-                    Katalog PDF
-                  </a>
                 </div>
               </div>
             </div>
@@ -216,27 +211,132 @@ const { title } = Astro.props;
         </div>
       </header>
 
+      <!-- ───── Main Content ───── -->
       <main class="isolate">
         <slot />
       </main>
 
-      <!-- Footer -->
+      <!-- ───── Footer ───── -->
       <div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
         <Footer />
+      </div>
+    </div>
+
+    <!-- ───────────────────────────────────────
+         Floating WhatsApp Button
+    ─────────────────────────────────────────── -->
+    <div
+      id="wa-wrapper"
+      class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"
+    >
+      <!-- Chat bubble tooltip -->
+      <div
+        id="wa-tooltip"
+        class="hidden flex-col items-end gap-1 pointer-events-none select-none"
+        aria-hidden="true"
+      >
+        <div
+          class="relative bg-white rounded-2xl rounded-br-sm shadow-xl border border-gray-100 px-4 py-3 max-w-xs"
+        >
+          <!-- Ekor bubble -->
+          <span
+            class="absolute -bottom-2 right-4 w-3 h-3 bg-white border-b border-r border-gray-100 rotate-45"
+          ></span>
+          <p class="text-sm font-semibold text-gray-800">
+            Ada yang bisa kami bantu? 👋
+          </p>
+          <p class="text-xs text-gray-400 mt-0.5">
+            Biasanya membalas dalam hitungan menit
+          </p>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="relative">
+        <!-- Pulse ring (berhenti setelah 8 detik via JS) -->
+        <span
+          id="wa-ping"
+          aria-hidden="true"
+          class="absolute inset-0 rounded-full bg-green-400 opacity-70 animate-ping"
+        ></span>
+        <a
+          id="wa-btn"
+          href="https://api.whatsapp.com/send?phone=6285777111302"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat via WhatsApp"
+          class="relative flex items-center justify-center h-14 w-14 rounded-full bg-green-500 shadow-lg
+                 hover:bg-green-600 hover:shadow-green-400/50 hover:scale-110
+                 active:scale-95 transition-all duration-200 ease-out"
+        >
+          <!-- WA Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            class="h-7 w-7 fill-white"
+            aria-hidden="true"
+          >
+            <path
+              d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.774L0 32l8.476-2.004A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.748-1.833l-.484-.287-5.028 1.188 1.227-4.9-.317-.502A13.267 13.267 0 0 1 2.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.778c-.398-.199-2.354-1.161-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.465.298-.863.1-.398-.199-1.681-.619-3.203-1.976-1.184-1.056-1.983-2.36-2.215-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.498-.033-.697-.1-.199-.896-2.161-1.228-2.958-.323-.775-.651-.67-.896-.682l-.763-.013c-.265 0-.696.1-.1061.498-.365.398-1.394 1.361-1.394 3.318s1.427 3.849 1.626 4.115c.199.265 2.808 4.287 6.803 6.014.951.41 1.693.655 2.271.838.954.303 1.823.26 2.51.158.766-.114 2.354-.963 2.686-1.893.332-.93.332-1.727.232-1.893-.1-.166-.365-.265-.763-.464z"
+            ></path>
+          </svg>
+        </a>
       </div>
     </div>
   </body>
 </html>
 
 <script>
-  const navBar: HTMLElement = document.getElementById("navBar");
-  const closeNavBar = document.getElementById("closeNavBar");
-  const openNavBar = document.getElementById("openNavBar");
-
-  closeNavBar.addEventListener("click", toggleMenu);
-  openNavBar.addEventListener("click", toggleMenu);
-
-  function toggleMenu() {
-    navBar.classList.toggle("hidden");
+  // ── Navbar toggle ──
+  function initNavbar() {
+    const navBar = document.getElementById("navBar");
+    const closeNavBar = document.getElementById("closeNavBar");
+    const openNavBar = document.getElementById("openNavBar");
+    const toggleMenu = () => navBar?.classList.toggle("hidden");
+    closeNavBar?.addEventListener("click", toggleMenu);
+    openNavBar?.addEventListener("click", toggleMenu);
   }
+
+  // ── WhatsApp floating button ──
+  function initWAButton() {
+    const waBtn = document.getElementById("wa-btn");
+    const tooltip = document.getElementById("wa-tooltip");
+    const waPing = document.getElementById("wa-ping");
+
+    function showTooltip() {
+      tooltip?.classList.remove("hidden");
+      tooltip?.classList.add("flex");
+    }
+    function hideTooltip() {
+      tooltip?.classList.add("hidden");
+      tooltip?.classList.remove("flex");
+    }
+
+    // Otomatis muncul setelah 3 detik, sekali per session
+    if (tooltip && !sessionStorage.getItem("wa-tooltip-shown")) {
+      setTimeout(() => {
+        showTooltip();
+        sessionStorage.setItem("wa-tooltip-shown", "1");
+        // Auto-tutup setelah 6 detik
+        setTimeout(hideTooltip, 6000);
+      }, 3000);
+    }
+
+    // Hover desktop
+    waBtn?.addEventListener("mouseenter", showTooltip);
+    waBtn?.addEventListener("mouseleave", hideTooltip);
+
+    // Hentikan animasi ping setelah 8 detik
+    setTimeout(() => waPing?.classList.remove("animate-ping"), 8000);
+  }
+
+  // Jalankan saat pertama load & setiap navigasi Astro View Transition
+  document.addEventListener("DOMContentLoaded", () => {
+    initNavbar();
+    initWAButton();
+  });
+  document.addEventListener("astro:page-load", () => {
+    initNavbar();
+    initWAButton();
+  });
 </script>
